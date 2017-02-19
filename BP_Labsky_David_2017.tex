@@ -1,0 +1,24 @@
+% options:
+% thesis=B bachelor's thesis
+% thesis=M master's thesis
+% czech thesis in Czech language
+% english thesis in English language
+% hidelinks remove colour boxes around hyperlinks
+
+% arara: xelatex: { shell: yes }
+%% arara: makeglossaries
+% arara: biber
+% arara: xelatex: { shell: yes }
+% arara: xelatex: { shell: yes }
+\documentclass[thesis=B,english,hidelinks]{template/FITthesisXE}
+
+
+%\acknowledgements{\input{podekovani.tex}}
+\abstractEN{\input{abstract_en.tex}}
+\abstractCS{\input{abstract_cs.tex}}
+
+\input{meta.tex}
+\begin{document}
+
+
+\end{document}
