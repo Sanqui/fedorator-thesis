@@ -12,6 +12,13 @@
 % arara: xelatex: { shell: yes }
 \documentclass[thesis=B,english,hidelinks]{template/FITthesisXE}
 
+% from https://www.herout.net/blog/2017/03/pomalu-uz-pojdme-psat/
+\usepackage{xcolor} 
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{[[#1]]}}}
+
+\usepackage{blindtext}
+\newcommand{\blind}[1][1]{\textcolor{gray}{\Blindtext[#1][1]}}
+
 
 %\acknowledgements{\input{podekovani.tex}}
 \abstractEN{\input{abstract_en.tex}}
@@ -19,6 +26,67 @@
 
 \input{meta.tex}
 \begin{document}
+
+\chapter{Introduction}
+    \todo{Words about the general problem space, a lot can be lifted from the positional report.}
+    \blind[2]
+\chapter{How Fedora Spreads Publicity}
+    \todo{Discusson over Fedora stands on events and conferences}
+    \todo{How DVDs are in use}
+    \todo{Ask some people involved in advertisement?}
+    \blind[3]
+\chapter{Fedorator}
+    \section{Concept}
+        \subsection{Function}
+            \todo{How it should function (include use case scenarios)}
+            \blind[3]
+        \subsection{Looks}
+            \todo{What it should look like, including mockups!}
+            \todo{Should this be earlier?}
+            \blind[3]
+    \section{Hardware Options}
+        \todo{Write a few options}
+        \blind[4]
+    \section{Cost considerations}
+        \todo{Point out the cost, how much money might be allotted towards building instances of the device...}
+        \blind[2]
+    \section{Ease of build}
+        \todo{Who will be building it?  What will make it easy to build?  What are potential obstacles?}
+        \blind[2]
+    \section{Roundup}
+        \todo{Include a table and short discussion over final choice(s)}
+        \blind[2]
+\chapter{Solution 1 (Raspberry Pi)}
+    \section{Rationale}
+        \todo{What will make this a good choice?}
+        \blind[2]
+    \section{Specification}
+        \todo{What, exactly, will the device consist of?}
+        \blind[3]
+    \section{Construction of a Prototype}
+        \todo{A prototype will be built.  This should probably include pictures and a short description of the process}
+        \blind[3]
+    \section{Simple instructions}
+        \subsection{Bill of Materials}
+            \todo{What is needed to get started - include a table and cost}
+            \blind[3]
+        \subsection{Step-by-step tutorial}
+            \todo{The meat: how to build it from grounds up}
+            \blind[4]
+    \section{Conclusions}
+        \todo{Words about if it'll be a good fit, after considering the above}
+        \blind[2]
+\chapter{Solution 2}
+    \todo{If applicable}
+\chapter{Closing words}
+    \section{What was done}
+        \todo{What is it I've done here, what consequences should it have}
+        \blind[2]
+    \section{Future work}
+        \todo{How can we build on top of what I've made}
+        \blind[2]
+
+    
 
 
 \end{document}
