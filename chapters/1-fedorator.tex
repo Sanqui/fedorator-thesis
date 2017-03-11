@@ -2,10 +2,30 @@
     \section{Concept}
         \subsection{Function}
             \todo{How it should function (include use case scenarios)}
-            \blind[3]
+            
+            The Fedorator should be a device that allows the layperson to load Fedora onto a generic USB flash drive.  The flash drive may be provided by the person, or it can be given away by people who watch over the stand.
+            
+            A Fedorator should allow the person to choose from several different images to load onto the USB drive.  This choice should be provided by an intuitive menu highlighting the current choice and allowing the user to scroll.  After the desired image is selected, a progress bar will be shown and the Fedorator will begin copying the image onto the flash drive.  This image will be verified for correctness after the image is written.
+            
+            Once this process is done, the Fedorator will call for the user's attention and inform them of the fact.  At this point, the flash drive may be safely removed and the Fedorator has done its job.  It shall revert to a standby state.
+            
+            Should an error be detected at any stage, the process will be halted and the user will be informed of what happened.  If appropriate, they may be asked to attempt to remove the USB stick and  and try again.
+            
+            The basic use case is as follows:
+            
+            \enumerate{
+                \item User approaches the device
+                \item User inserts USB flash drive
+                \item User follows instructions on screen to select an image
+                \item Fedorator loads the image on the provided USB flash drive
+                \item User is informed of the outcome of the process
+            }
+            %\blind[3]
         \subsection{Looks}
             \todo{What it should look like, including mockups!}
             \todo{Should this be earlier?}
+            
+            
             \blind[3]
     \section{Hardware Options}
         \todo{Write a few options}
