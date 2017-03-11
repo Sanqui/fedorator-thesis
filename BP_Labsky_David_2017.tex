@@ -17,7 +17,9 @@
 \newcommand{\todo}[1]{\textcolor{red}{\textbf{[[#1]]}}}
 
 \usepackage{blindtext}
-\newcommand{\blind}[1][1]{\textcolor{gray}{\Blindtext[#1][1]}}
+\newcommand{\blind}[1][1]{
+    \textcolor{gray}{\Blindtext[#1][1]}
+}
 
 
 %\acknowledgements{\input{podekovani.tex}}
@@ -30,11 +32,15 @@
 \chapter{Introduction}
     \todo{Words about the general problem space, a lot can be lifted from the positional report.}
     \blind[2]
-\chapter{How Fedora Spreads Publicity}
-    \todo{Discusson over Fedora stands on events and conferences}
-    \todo{How DVDs are in use}
-    \todo{Ask some people involved in advertisement?}
-    \blind[3]
+    \section{How Fedora Spreads Publicity}
+        \todo{Discusson over Fedora stands on events and conferences}
+        \todo{How DVDs are in use}
+        \todo{Ask some people involved in advertisement?}
+        \blind[3]
+    \section{Rationale for a New Solution}
+        \todo{Discuss how USB flash drives could be mass produced here, and why it isn't quite desirable.}
+        \todo{Also mention existing USB flash drive cloning devices and how expensive they are.}
+        \blind[3]
 \chapter{Fedorator}
     \section{Concept}
         \subsection{Function}
@@ -50,8 +56,8 @@
     \section{Cost considerations}
         \todo{Point out the cost, how much money might be allotted towards building instances of the device...}
         \blind[2]
-    \section{Ease of build}
-        \todo{Who will be building it?  What will make it easy to build?  What are potential obstacles?}
+    \section{Ease of assembly}
+        \todo{Who will be assembling it?  What will make it easy to assemble?  What are potential obstacles?}
         \blind[2]
     \section{Roundup}
         \todo{Include a table and short discussion over final choice(s)}
@@ -67,6 +73,7 @@
         \todo{A prototype will be built.  This should probably include pictures and a short description of the process}
         \blind[3]
     \section{Simple instructions}
+        \todo{These are the final instructions that will be the "result" of the work.  Should they be inlined here?}
         \subsection{Bill of Materials}
             \todo{What is needed to get started - include a table and cost}
             \blind[3]
