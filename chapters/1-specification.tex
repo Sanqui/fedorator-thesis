@@ -1,0 +1,62 @@
+\chapter{Specification and Goals}
+    or, the Concept of the Fedorator
+    \section{Function}
+        \todo{How it should function (include use case scenarios)}
+        
+        The Fedorator should be a device that allows the layperson to load Fedora onto a generic USB flash drive.  The flash drive may be provided by the person, or it can be given away by people who watch over the stand.
+        
+        A Fedorator should allow the person to choose from several different images to load onto the USB drive.  This choice should be provided by an intuitive menu highlighting the current choice and allowing the user to scroll.  After the desired image is selected, a progress bar will be shown and the Fedorator will begin copying the image onto the flash drive.  This image will be verified for correctness after the image is written.
+        
+        Once this process is done, the Fedorator will call for the user's attention and inform them of the fact.  At this point, the flash drive may be safely removed and the Fedorator has done its job.  It shall revert to a standby state.
+        
+        Should an error be detected at any stage, the process will be halted and the user will be informed of what happened.  If appropriate, they may be asked to attempt to remove the USB stick and  and try again.
+        
+        The basic use case is as follows:
+        
+        \begin{itemize}
+            \item User approaches the device
+            \item User inserts USB flash drive
+            \item User follows instructions on screen to select an image
+            \item Fedorator loads the image on the provided USB flash drive
+            \item User is informed of the outcome of the process
+        \end{itemize}
+        %\blind[3]
+    \section{Looks}
+        \todo{What it should look like, including mockups!}
+        \todo{Should this be earlier?}
+        
+        The expectation stands that a Fedorator will be used on Fedora stands situated on events.  It then logically follows that it should be fairly sizeable.  A goal may be to attract the interest of passerbys, as well.  In other words, it would be counter-productive to design the Fedorator to be minimalistic.
+        
+        Another, possibly the primary goal, is for the device to be intuitive.  Since it is sort of a novel concept, people will usually be unfamiliar with the purpose of the device.  The looks should assist the user in understanding what the Fedorator does.
+        
+        A number of features can be made prominent to express the purpose.  The Fedorator should clearly convey a Fedora branding.  This should be accomplished by having the casing primarily blue in color as well as bearing the Fedora logo.
+        
+        \todo{Check https://fedoraproject.org/wiki/Marketing, https://fedoraproject.org/wiki/Logo}
+        
+        It would also be logical for the USB ports to be visible.
+        
+        \todo{Buttons?}
+        
+        \todo{Other features ?}
+        
+        \todo{Prototype image ?  May be a sketch or 3D model, I will be making one later for 3D printing though.}
+        \todo{Yes, there should be mockups.  USER TESTING should be done - can be just showing people and asking what they think}
+        %\blind[3]
+    \section{Interface}
+        \todo{TALK about possible displays!  This is a hugely important point!}
+        \todo{Displays: touch based?  advantages, prices}
+        
+        \todo{Buttons can be various: there can be a round/circular button}
+        
+        \todo{Also compare cases}
+        
+        Fedorator shall entail the following hardware components in order to fulfil all requirements.
+        \begin{itemize}
+            \item Display
+            \item Buttons (at least four)
+            \item USB port (at least one)
+            \item Image storage (e.g. MicroSD slot)
+            \item Case
+        \end{itemize}
+        
+        \blind[1]
