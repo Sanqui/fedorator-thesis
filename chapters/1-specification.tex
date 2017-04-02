@@ -9,7 +9,9 @@
         
         Once this process is done, the Fedorator will call for the user's attention and inform them of the fact.  At this point, the flash drive may be safely removed and the Fedorator has done its job.  It shall revert to a standby state.
         
-        Should an error be detected at any stage, the process will be halted and the user will be informed of what happened.  If appropriate, they may be asked to attempt to remove the USB stick and  and try again.
+        Should an error be detected at any stage, the process will be halted and the user will be informed of what happened.  If appropriate, they may be asked to attempt to remove the USB stick and try again.
+        
+        In case there is data present on the flash drive prior to writing the image, the user shall be informed and asked whether it's fine to overwrite.
         
         The basic use case is as follows:
         
@@ -19,13 +21,10 @@
             \item User follows instructions on screen to select an image
             \item Fedorator loads the image on the provided USB flash drive
             \item User is informed of the outcome of the process
+            \item User takes out their USB flash drive, which will contain the selected bootable image of Fedora on it
         \end{itemize}
-        %\blind[3]
     \section{Looks}
-        \todo{What it should look like, including mockups!}
-        \todo{Should this be earlier?}
-        
-        The expectation stands that a Fedorator will be used on Fedora stands situated on events.  It then logically follows that it should be fairly sizeable.  A goal may be to attract the interest of passerbys, as well.  In other words, it would be counter-productive to design the Fedorator to be minimalistic.
+        The expectation stands that a Fedorator will be used on Fedora stands situated on events.  It may follow that it should be fairly sizeable in order to be accessible and easily usable.  A goal may be to attract the interest of passerbys, as well.
         
         Another, possibly the primary goal, is for the device to be intuitive.  Since it is sort of a novel concept, people will usually be unfamiliar with the purpose of the device.  The looks should assist the user in understanding what the Fedorator does.
         
@@ -33,24 +32,34 @@
         
         \todo{Check https://fedoraproject.org/wiki/Marketing, https://fedoraproject.org/wiki/Logo}
         
-        It would also be logical for the USB ports to be visible.
-        
-        \todo{Buttons?}
+        It would also be logical for the USB ports to be visible as they should result in an intuitive explanation.
         
         \todo{Other features ?}
-        
-        \todo{Prototype image ?  May be a sketch or 3D model, I will be making one later for 3D printing though.}
-        \todo{Yes, there should be mockups.  USER TESTING should be done - can be just showing people and asking what they think}
-        %\blind[3]
     \section{Interface}
+        An user interface should be presented to the user.  We shall consider the most trivial and minimalistic implementation of the Fedorator, and then add potentially desirable features with a rationale.
+        
+        The trivial Fedorator requires nothing but an USB port.  As soon as the user inserts a USB flash drive, it would write the image to it.  This certainly works - but immediately we can see room for improvement.  Even if the writing process is fast enough, the user will not know when has it finished.  An indicator is therefore desirable.
+        
+        The device can provide visual or aural information.  Because the Fedorator may be used in a noisy environment, a sound may be easy to miss.  Therefore, we will choose a LED diode right next to the USB port.  For example, the light may blink while the transfer is in progress, and emit constant light once it's complete.
+        
+        The next point to consider is a way to start the process other than simply insertion of the USB flash drive.  The user may not expect something to happen immediately when the flash drive is inserted.  There is also risk in the device starting the write too early (e.g. before the USB flash drive is firmly in the slot).  Waiting for the press of a button, or another, similarly explicit action from the user solves these issues.
+        
+        Should we wish to allow the user to choose from several images to install, we will need to add more components.  One possibility would be presenting several buttons, one for each image.  This would be a poor choice in the context of future expansions and changes.  A display would be much more flexible and future-proof.
+        
+        In order to let the user make a selection on a display, we can provide a tactile interface, such as buttons.  To navigate the interface comfortably, at least three buttons are required - serving as up, down, and accept.
+        
+        \todo{https://www.adafruit.com/products/2056 show this (or a different) image as an example}
+        An alternative to buttons would be a rotary encoder.  It also allows the user to scroll comfortably and choose, and may be more comfortable for scrolling through a menu than repeatedly hitting buttons.
+        
+        We can choose to forego buttons if we use a touchscreen.  If sufficiently large and accessible, it will be comfortable for use.
+        \todo{write more about touchscreens}
+        
         \todo{TALK about possible displays!  This is a hugely important point!}
         \todo{Displays: touch based?  advantages, prices}
-        \todo{}
-        
-        \todo{Buttons can be various: there can be a round/circular button}
         
         \todo{Also compare cases}
         
+        \todo{This is outdated:}
         Fedorator shall entail the following hardware components in order to fulfil all requirements.
         \begin{itemize}
             \item Display
