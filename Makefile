@@ -1,4 +1,4 @@
-svgs = $(shell for F in media/*.svg; do echo $${F%.svg}; done)
+svgs = $(shell for F in media/svg/*.svg; do echo $${F%.svg}; done)
 
 media/%.pdf: media/%.svg
 	inkscape -D -z --file="$<" --export-pdf "$@" --export-latex
