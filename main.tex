@@ -12,6 +12,8 @@
 % arara: xelatex: { shell: yes }
 \documentclass[thesis=B,english,hidelinks]{template/FITthesisXE}
 
+\bibliography{library.bib}
+
 \usepackage{import}
 
 % from https://www.herout.net/blog/2017/03/pomalu-uz-pojdme-psat/
@@ -50,6 +52,7 @@
     \input{"chapters/9-conclusion.tex"}
 \end{conclusion}
     
+\printbibliography[]
 
 
 \end{document}
