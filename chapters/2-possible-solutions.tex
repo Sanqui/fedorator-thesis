@@ -7,6 +7,7 @@
         \blind[2]
     \section{Hardware Options}
         \todo{Write a few options.  I have done some of this in the positional report.  I have previously defined these options as FPGA, Arduino, NodeMCU, Raspberry Pi.}
+        \todo{Batteries are not an option}
         \blind[4]
     \section{Component Options}
         \todo{Where can buttons and LCDs come from..?}
@@ -18,7 +19,9 @@
         \subsection{Plastic}
             Generally, plastic casings require ordering a mold, which is an expensive proposition unless an option unless a significant amount of devices is manufactured.
         \subsection{3D printed}
-            In tech circles, 3D printers a common find these days.  A 3D printed case is only the matter of getting ahold of a printer.  There may be inconsistencies in color.  \todo{?}
+            In tech circles, 3D printers a common find these days.  It is likely anybody wishing to build a Fedorator would have access to one.  A 3D printed case is simply the matter of getting ahold of a printer.
+            
+            There may be inconsistencies in color.  \todo{?  Sturdiness?}
             
             For a technically hobby project like this, a 3D printed case is the logical choice.
     \section{Roundup}
@@ -28,13 +31,26 @@
         Based on this analysis, I have created three distinct Fedorator concepts.
         \subsection{Concept A}
             \importsvg{concept-a}
-            The first concept is a moderately large device which is to be used fixed in place and used while standing.  It provides an LCD with on-screen information on the status and progress.  The rotary knob allows for controling the menu and making a selection.  There are four USB slots present, each with a corresponding status light.  In order to be stable, the device needs support from the back.
+            The first concept is a moderately large device which is to be used fixed in place and used while standing.  It provides an LCD with on-screen information on the status and progress.  The rotary knob allows for controling the menu and making a selection.  It may be replaced with three buttons if so desired.  There are four USB slots present, each with a corresponding status light.  In order to be stable, the device needs support from the back.
             
-            \todo{Due to size of display and number of ports it needs Raspi...}
-            \blind[1]
+            Due to the size of the display and the number of USB ports, putting a Raspberry Pi computer at the core makes the most sense.
+            
+            The Fedorator needs to be plugged into a power source, so there will be a cable running from the back.
         \subsection{Concept B}
             \importsvg{concept-b}
-            \blind[2]
+            The second concept is similar in some ways to the first one, but with some tweaks.  The knob is removed, the sole control if a prominent touchscreen positioned vertically.  As a consequence, the device can be thinner.  There are now only two USB slots.  The device is sleek and symmetric.
+            
+            In order not to have stability issues, a heavy weight will likely be necessary to keep the Fedorator in place as it's being used.
+            
+            This design is also powered by a Raspberry Pi.
         \subsection{Concept C}
             \importsvg{concept-c}
-            \blind[2]
+            The third and final concept is a radical departure from the first two.  Instead of standing still while being manipulated, this Fedorator is designed to be picked up and held in a hand.  The OLED screen is small yet sharp and despite providing only a binary image it works well enough for our purposes.  The three buttons allow for selecting the desired live image.
+            
+            Due to its small size, this device will be powered by an Arduino board.
+            
+            This design still needs to be powered by cable.  This cable will be permanently attached by the means of enclosure.  This has the positive side effect of discouraging people from attempting to leave with the Fedorator.
+            
+            Because it only has a single USB slot, it may be desirable to provide multiple instances of this Fedorator.
+    \section{Choice}
+        I have performed an informal survey showing people these three concepts.  Based on user feedback, people were excited about both designs B and C.  Because they differ so significantly, I will make an attempt at bringing each to reality.
