@@ -24,12 +24,20 @@
 \usepackage{blindtext}
 \newcommand{\blind}[1][1]{
 
-
 }
 
 \newcommand{\importsvg}[1]{
     \def\svgwidth{\columnwidth}
     \import{media/svg/}{#1.pdf_tex}
+}
+
+
+\newcommand{\imagefigure}[3]{
+    \begin{figure}[htbp]
+    \centering
+        \includegraphics[width=.6\linewidth]{media/#2}
+        \caption{#3 \label{pic:#1}}
+    \end{figure}
 }
 
 
