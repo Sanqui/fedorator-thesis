@@ -28,7 +28,7 @@
             \begin{itemize}
                 \item Setting up the device may involve small amounts of assembly.
                 \item The device needs to be connected to a power source.
-                \item The operator should ensure the software and images present are up to date.
+                \item The operator should ensure the software and images present on are up to date.
             \end{itemize}
     \section{Looks}
         The expectation stands that a Fedorator will be used on Fedora stands situated on events.  It may follow that it should be fairly sizeable in order to be accessible and easily usable.  A goal may be to attract the interest of passerbys, as well.
@@ -47,7 +47,7 @@
         
         The trivial Fedorator requires nothing but an USB port.  As soon as the user inserts a USB flash drive, it would write the image to it.  This certainly works - but immediately we can see room for improvement.  Even if the writing process is fast enough, the user will not know when has it finished.  An indicator is therefore desirable.
         
-        The device can provide visual or aural information.  Because the Fedorator may be used in a noisy environment, a sound may be easy to miss.  Therefore, we will choose a LED diode right next to the USB port.  For example, the light may blink while the transfer is in progress, and emit constant light once it's complete.
+        The device can provide visual or aural information.  Because the Fedorator may be used in a noisy environment, as conferences often are, a sound may be easy to miss.  Therefore, we will choose a LED diode right next to the USB port.  For example, the light may blink while the transfer is in progress, and emit constant light once it's complete.  Alternatively, such information may be provided by a display.
         
         The next point to consider is a way to start the process other than simply insertion of the USB flash drive.  The user may not expect something to happen immediately when the flash drive is inserted.  There is also risk in the device starting the write too early (e.g. before the USB flash drive is firmly in the slot).  Waiting for the press of a button, or another, similarly explicit action from the user solves these issues.
         
@@ -55,8 +55,9 @@
         
         In order to let the user make a selection on a display, we can provide a tactile interface, such as buttons.  To navigate the interface comfortably, at least three buttons are required - serving as up, down, and accept.
         
-        \todo{https://www.adafruit.com/products/2056 show this (or a different) image as an example}
-        An alternative to buttons would be a rotary encoder.  It also allows the user to scroll comfortably and choose, and may be more comfortable for scrolling through a menu than repeatedly hitting buttons.
+        \imagefigure{adafruit-knob}{adafruit-knob.jpg}
+            {Adafruit - Solid Machined Metal Knob - 1" Diameter \cite{adafruit-knob}}
+        An alternative to buttons would be a rotary encoder or a knob.  It also allows the user to scroll comfortably and choose by pressing.  It may be more comfortable for scrolling through a menu than repeatedly hitting buttons.
         
         We can choose to forego buttons if we use a touchscreen.  If sufficiently large and accessible, it will be comfortable for use.
         \todo{write more about touchscreens}
@@ -66,14 +67,13 @@
         
         \todo{Also compare cases}
         
-        \todo{This is outdated:}
-        Fedorator shall entail the following hardware components in order to fulfil all requirements.
+        In order to be fully featured, the Fedorator must entail the following hardware components.
         \begin{itemize}
-            \item Display
-            \item Buttons (at least four)
-            \item USB port (at least one)
-            \item Image storage (e.g. MicroSD slot)
-            \item Case
+            \item \textbf{CPU}.
+            \item \textbf{Display} - providing information and conveying state.
+            \item \textbf{Buttons}, \textbf{rotary knob}, or a \textbf{touchscreen}.
+            \item At least one \textbf{USB port}.
+            \item \textbf{MicroSD slot} or another way to store images.
+            \item \textbf{Case} - to hide the components.
         \end{itemize}
         
-        \blind[1]
