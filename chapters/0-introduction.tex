@@ -1,7 +1,7 @@
 \label{Introduction}
     In today's world, there are many free and open–source operating systems based on the Linux kernel, called Linux distributions\cite{whatislinux}.  Despite Linux's relatively small market share (between 2.4\% and 4.6\%, to date\cite{linuxmarketshare}), it is being used by millions of people daily and has significant traction among developers\cite{sosurvey} and technically minded people in general.  The companies and communities behind Linux distributions are, of course, trying to raise the usage of their respetive operating systems.  One way to achieve that is through marketing stands at various technical conferences.  Besides persuasion and marketing items such as stickers, a great way to get people to try a new operating system is to simply hand it over to them.
 
-    The community behind the free Linux distribution called Fedora\cite{fedora} has been giving out live DVDs which let people try and install Fedora at home.  However, recently a decision was made and Fedora 25 is the last release which will be distributed on DVDs in the European region. \todo{CITE}  This is because as time advances, less computers actually have a DVD drive.  In the past few years, laptops have been getting thinner and come without DVD drives\cite{laptopdvd}.  Most computers nowadays are capable of booting from an USB flash drive just as well as from disk drives.
+    The community behind the free Linux distribution called Fedora\cite{fedora} has been giving out live DVDs which let people try and install Fedora at home.  However, recently a decision was made and Fedora 25 is the last release which will be distributed on DVDs in the European region. \todo{CITE}  This is because as time advances, less computers actually have a DVD drive.  In the past few years, laptops have been getting thinner and come without DVD drives\cite{laptopdvd}.  Most computers nowadays are capable of booting from an USB flash drive just as well as from disk drives. \todo{CITE}
     
     The goal of this thesis is to design and construct a device, dubbed the "Fedorator", which will enable writing Fedora to flash drives as a self-service.  The primary use of the Fedorator would be on marketing stands, where it would be available for visitors to use with any USB flash drive.  This device should be relatively simple to construct using off-the-shelf components, even for a person who haven't seen it in person before.
     \section{How Fedora Spreads Publicity}
@@ -74,8 +74,10 @@
             Besides their price, the trouble with these products is that they are proprietary.  The hardware cannot be built from scratch and the software cannot be inspected or improved.  The devices which are not stand-alone require a computer with specific software and drivers to operate.  Linux support is not claimed, and therefore likely unavailable, leading to a sad and undesired irony of requiring a computer running an OS that is not Linux in order to produce and distribute USB flash drives containing Linux.
         \subsection{}
             \todo{Doing it by hand?}
+        \subsection{}
+            \todo{Does something EXACTLY like fedorator exist?  "My searches brougt up no such thing."  (Actually do the searches though.)} 
     \section{Rationale for a New Solution}
-        Despite available options, I will go ahead with designing the Fedorator.  There are several advantages to designing a solution from scratch.
+        There are several advantages to designing a solution from scratch.
         
         \begin{itemize}
             \item It will be a free and open solution under a permissive license, allowing others to give improvements.
@@ -91,3 +93,5 @@
             \item \todo{More disadvantages}
             \item We may run into other unexpected issues.
         \end{itemize}
+        
+        Despite available options, as we've seen, they do not offer all of the advantages of possible a new solution.  I will go ahead and design a device called the Fedorator.

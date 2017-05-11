@@ -1,8 +1,5 @@
 \chapter{Specification and Goals}
-    The primary goal of the Fedorator is to function as an USB flash drive writer, therefore focus will be on the end user.
     \section{Function}
-        \todo{How it should function (include use case scenarios)}
-        
         The Fedorator should be a device that allows the layperson to load Fedora onto a generic USB flash drive.  The flash drive may be provided by the person, or it can be given away by people who watch over the stand.
         
         A Fedorator should allow the person to choose from several different images to load onto the USB drive.  This choice should be provided by an intuitive menu highlighting the current choice and allowing the user to scroll.  After the desired image is selected, a progress bar will be shown and the Fedorator will begin copying the image onto the flash drive.  This image will be verified for correctness after the image is written.
@@ -13,18 +10,26 @@
         
         In case there is data present on the flash drive prior to writing the image, the user shall be informed and asked whether it's fine to overwrite.
         
-        The basic use case is as follows:
-        
-        \begin{itemize}
-            \item User approaches the device
-            \item User inserts USB flash drive
-            \item User follows instructions on screen to select an image
-            \item Fedorator loads the image on the provided USB flash drive
-            \item User is informed of the outcome of the process
-            \item User takes out their USB flash drive, which will contain the selected bootable image of Fedora on it
-        \end{itemize}
-    \section{Operation}
-        Starts, maintenance
+        The primary goal of the Fedorator is to function as an USB flash drive writer, therefore focus will be on the end user.  However, I will also consider how the device will be operated by the person setting it up.
+        \subsection{User}
+            There is only one way a regular person interacts with a Fedorator.  This user case is as follows.
+            
+            \begin{itemize}
+                \item User approaches the device.
+                \item User inserts USB flash drive.
+                \item User follows instructions on screen to select an image.
+                \item Fedorator loads the image on the provided USB flash drive.
+                \item User is informed of the outcome of the process.
+                \item User takes out their USB flash drive, which will contain the selected bootable image of Fedora on it.
+            \end{itemize}
+        \subsection{Operator}
+            A person needs to prepare the Fedorator for public usage.  This person shall be called the operator.  This process will generally involve the following.
+            
+            \begin{itemize}
+                \item Setting up the device may involve small amounts of assembly.
+                \item The device needs to be connected to a power source.
+                \item The operator should ensure the software and images present are up to date.
+            \end{itemize}
     \section{Looks}
         The expectation stands that a Fedorator will be used on Fedora stands situated on events.  It may follow that it should be fairly sizeable in order to be accessible and easily usable.  A goal may be to attract the interest of passerbys, as well.
         
