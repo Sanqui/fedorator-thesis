@@ -2,4 +2,104 @@
     \section{}
     In order to create a device behaving as an USB host, I have studied the USB specification.
     
+    \todo {Also in order to understand speed, behavior, etc...}
     
+    \todo{These are just notes for now.}
+
+\begin{verbatim}
+    I will only support 2.0 since that's what most mass storage devices have
+    
+    * Cable bus
+    * Host-scheduled, Token based protocol
+    * USB supports up to n peripherials attached simultaneously more but I will only use one
+    
+    * A topology is prescribed.  Host, hub, and function
+    
+    * Host: host controller, hw/fw/sw
+    
+    * Device: Hubs or functions
+    
+    * Four-wire cable, three data rates
+        * High-speed
+        * Full-speed
+        * Low-speed 
+    * Clock
+    * VBUS (5V) and GND
+    
+    * Power: host supplies power.  Bus-powered x self-powered.
+    
+    * Protocol:
+        * Polled bus
+        * Host controller initiates
+        * Most bus transaction involve transmisison of up to three packets
+        * Token packet first
+        * Pipes: stream (no defined structure) and message; default control pipe
+        * Flow control is offered for stream pipes
+        
+    * USB offers robustness: error detection and handling
+    
+    * Attachment goes through a hub, the device receives an address
+    
+    * Four types of data transfers:
+        * Control - configuration and pipe management
+        * Bulk - large and bursty, wide latitude and transmission constraints
+            * Sequential
+            * Reliable
+            * Error detection in hardware
+            * Variable bandwidth
+        * Interrupt - timely and reliable
+        * Isochrronous - prenegotiated latency streaming/realtime
+    
+    * Bandwidth is allocated among pipes; USB devices are required to provide some buffering; of course bandwidth can be spread out.
+    
+    * USB devices
+        * Device classes TODO (Ch 11)
+        * All devices support at least one pipe at endpoint zero 9the control pipe)
+        
+    * Hubs are a thing, but we don't care about them
+        * (Check if we are a single hub)
+        * Attachment point is a "port"
+    
+    * Function is an USB device.  
+    
+    * USB Host interacts with USB devices through the Host Controller.  Its responsibilities are managing the USB devices.
+    
+    * Blah blah, usb allows for complex topology, but we will only be using host-root hub-device/function.
+        
+    * Device endpoint
+        * Uniquely identifiable portion of an USB device that is the terminus of a communication flow between host and device.
+        * Endpoints are independent
+        * Endpoint numbers, device-determined direction of data flow
+        * <device address, endpoint number, direction> = unique reference
+        * Endpoints are simplex with data flow in a single direction.
+        * USB Pipe is an association between endpoint on device and software on host
+            * Data transfers are requested via I/O Request Packets (IRPs) to a pipe.
+            * On STALL or errors for IRPs, IRP is aborted/retried, all outstanding IRPs are retried, and no further IRPs are accepted until software recovers and acknowledges halt/error condition via USBD call
+            * Maximum packet size
+            * Endpoint can inform that it's busy by responding with NAK.  Not a retry condition.  Is not an error.
+            
+            * Stream pipes
+                * No USB-required structure
+                * Unidirectional FIFO
+                * Bulk/isochronous/interrupt
+            * Message pipes (5.3.2.2) TODO if necessary
+        * 5.3.3 frames and microframes
+        * transfer types (again)
+            * control
+            * iso
+            * interrupt
+            * Bulk transfers
+                * Large amounts of data, variable times
+                *Access to the USB on a bandwidth-available basis
+                * Retry of transfers
+                * Guaranteed delivery of data, no guarantee of bandwidth and latency
+                * Payload sizes: 8 to 512 (high-speed)
+                * Bulk transfers and control registers deliver independently and possibly before each other
+            
+                
+    
+    
+\end{verbatim}
+    \todo{SPEEDS (and average TIMES)}
+
+
