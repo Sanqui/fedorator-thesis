@@ -76,8 +76,16 @@
             The fast CPU, on-board USB host port and MicroSD host port make the Teensy a strong contender.
             
             
-        \subsection{Xilinx FPGA}
-        \todo{Write a few options.  I have done some of this in the positional report.  I have previously defined these options as FPGA, Arduino, NodeMCU, Raspberry Pi.}
+        \subsection{FPGA}
+            One final option I considered is to forgo a CPU completely and design a custom chip instead.  FPGA stands for field-programmable gate array and it's a class of integrated circuits which can be reconfigured at will.  Thanks to allowing exact configuration of logic elements and memory blocks to serve a specific purpose, they're extremely efficient at signal processing\cite{sadrozinski2016applications}.
+            
+            By designing custom circuitry to handle copying of data from an SD card to a USB flash drive, the copier could be very fast, bottlenecked only by the connected devices.
+            
+            Popular FPGA manufacturers include big names such as Xilinx\cite{fpga-xilinx} and Intel\cite{fpga-intel}.  The field of open hardware FPGA tools is lacking, although there do seem to be some contenders, like Papilio\cite{fpga-papilio}. 
+            
+            However, programming FPGAs is a task more difficult than software programming, requiring the management of input and output signals and careful timing.  I have deemed the task of implementing the USB protocol at such a low-level complex.
+            
+            
         \todo{Batteries are not an option}
         \blind[4]
     \section{Component Options}
