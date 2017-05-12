@@ -14,15 +14,14 @@
     \section{USB specification}
         USB is a cable bus providing data exchange between a host device (usually a computer) and several connected peripherals which may be attached and used independently.  USB defines a host-scheduled and token-based protocol for communication with peripherals.
         
-        A USB system is prescribed as a tiered star topology involving hosts, hubs, and functions.
+        A USB system is prescribed as a tiered star topology involving hosts, hubs, and functions (logical devices).
         
         \subsection{USB host}
-            A single host is present in any USB system.  The Host Controller, implemented in hardware or software, has many responsibilities.  It initiates connections and manages all communication and bandwidth between software and connected functions.
+            A single host is present in any USB system.  The Host Controller, implemented in hardware or software, has many responsibilities.  It initiates connections and manages all communication and bandwidth between software and connected devices.
             
             The USB host also supplies power to connected devices.
         
         \subsection{USB device}
-            The USB device is...
             A USB device may be one of many classes. \todo{..}
         
         \subsection{USB hardware}
@@ -38,7 +37,24 @@
         \subsection{USB protocol}
             On the low level, USB functions as a polled bus.  Transactions, as initiated by the Host Controller, usually involve the transmission of up to three packets.  The token packet allows devices to identify whether they're the intended recipient of the packet.
             
-            For data transmission, USB offers pipes between 
+            To faciliate communication, the host and device negotiate device endpoints.  A device may be composed of several independent endpoints.  Endpoints are simplex - data flow is defined in a single direction.
+            
+            A USB pipe is an association between an endpoint on a device and software on the host.  In other words, pipes are what the software handles and uses for data transmission.  Pipes can be configured to behave in \emph{message} or \emph{stream} modes, which either do or do not have a USB-defined structure, respectively.
+            
+            Pipes define a transfer type and hold several characteristics, such as directionality, the transfer type, the amount of bandwidth allocated, and maximum data payload sizes.  A pipe called the Default Control Pipe is always present which is used for device configuration.
+            
+            %Data transfers over pipes are requested using I/O Request packets (IRPs).  IRPs will be retried under failure conditions, but three bus errors or a stall will require the host to recover.
+            
+            USB offers four transfer types for a pipe:
+            \begin{itemize}
+                \item \textbf{Control Transfer}: Simple request/response communication used to communicate commands and status.
+                \item \textbf{Isochronous Transfer}: Contunious communication without guarantee for errors inteded for real-time data.
+                \item \textbf{Interrupt Transfer}: Timely and reliable latency-bound communication.
+                \item \textbf{Bulk Transfer}: Large and bursty, but non-time sensitive data transmission, utilizing any bandwidth available.
+            \end{itemize}
+            
+            \todo{mass utilize bulk, more on page 52}
+
 
 \begin{comment}
     I will only support 2.0 since that's what most mass storage devices have
