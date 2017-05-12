@@ -33,20 +33,28 @@
     \import{media/svg/}{#1.pdf_tex}
 }
 
-% usage: \imagefigure{name}{filename}{description}
-\newcommand{\imagefigure}[3]{
+% usage: \imagefigure{filename}{description}
+\newcommand{\imagefigurefull}[3]{
     \begin{figure}[htbp]
     \centering
-        \includegraphics[width=.6\linewidth]{media/#2}
-        \caption{#3 \label{pic:#1}}
+        \includegraphics[width=#3\linewidth]{media/#1}
+        \caption{#2 \label{pic:#1}}
     \end{figure}
+}
+
+\newcommand{\imagefigure}[2]{
+    \imagefigurefull{#1}{#2}{.6}
+}
+
+\newcommand{\screenshotfigure}[2]{
+    \imagefigurefull{#1}{#2}{.4}
 }
 
 \newcommand{\svgfigure}[3]{
     \begin{figure}[htbp]
     \centering
-        \importsvg{#2}
-        \caption{#3 \label{pic:#1}}
+        \importsvg{#1}
+        \caption{#2 \label{pic:#1}}
     \end{figure}
 }
 

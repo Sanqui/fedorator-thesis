@@ -19,11 +19,43 @@
         The device shall consist of:
         \begin{itemize}
             \item Raspberry Pi~3 Model~B.  Compatibility with Raspberry Pi~2 Model~B may be possible, but not a primary goal.
-            \item A compatible 7~inch touchscreen.
+            \item A compatible 3.5~inch touchscreen.
             \item A MicroSD card holding the system and several images.
             \item Two male-to-female USB cables.
         \end{itemize}
+    
+    \section{Software}
+        The Fedorator supports both Raspbian, the officially supported Raspberry Pi compatible Linux distribution\cite{raspian}, and the eponymous Fedora operating system.  To faciliate easier testing, it's also possible to start the software on a regular Linux desktop.
         
+        The current version of the Fedorator software may be found in the appendix.  It is also made available online on GitHub under the \todo{TODO} license\cite{fedorator-github}, where continued development will take place.  
+        
+        The software running on the Fedorator is written in Python and uses the Kivy framework to provide a touchscreen interface.  It is is designed to start immediately after boot and stay running indefinitely.
+        
+        In standby, the screen shows prominently the Fedora logo as well as the name of the device (\ref{pic:fedorator-screenshot-standby.png}).  It prompts the user to insert a flash drive.
+        
+        \screenshotfigure{fedorator-screenshot-standby.png}
+            {The standby screen}
+        
+        When the user inserts a flash drive, the text changes, stating "Tap to begin".  The size of the flash drive is also displayed at the bottom part of the screen.
+        
+        Tapping will transition the screen into a menu listing releases available for writing (\ref{pic:fedorator-screenshot-list.png}).  This list can be browsed by a swiping a finger or stylus across the screen.  Tapping the top left corner will always bring the user back to the previous screen, as indicated by the faint "back" text. 
+        
+        \screenshotfigure{fedorator-screenshot-list.png}
+            {Picking a release from the list}
+        
+        After tapping a desired release, a screen with details is presented (\ref{pic:fedorator-screenshot-details.png}).  It contains a short official description of the release and offers to set the version and architecture, should the user wish for something other than the defaults.
+        
+        \screenshotfigure{fedorator-screenshot-details.png}
+            {Taking a look at the Fedora Workstation release}
+        
+        If the user is happy with the choice, they can press the sizeable "Flash" button.  This begins the process of writing the image to the flash drive.
+        
+        \todo{(fedorator) Do I want to change the button from "Flash" to "Write" or such?  Also, Maybe add a warning about this being a destructive action}
+        
+        \todo{If at any point the flash drive is removed, ...}
+        
+        \todo{text}
+         
     \section{Construction of a Prototype}
         \todo{A prototype will be built.  This should probably include pictures and a short description of the process}
         \blind[3]
