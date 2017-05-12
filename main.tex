@@ -33,11 +33,19 @@
     \import{media/svg/}{#1.pdf_tex}
 }
 
-
+% usage: \imagefigure{name}{filename}{description}
 \newcommand{\imagefigure}[3]{
     \begin{figure}[htbp]
     \centering
         \includegraphics[width=.6\linewidth]{media/#2}
+        \caption{#3 \label{pic:#1}}
+    \end{figure}
+}
+
+\newcommand{\svgfigure}[3]{
+    \begin{figure}[htbp]
+    \centering
+        \importsvg{#2}
         \caption{#3 \label{pic:#1}}
     \end{figure}
 }

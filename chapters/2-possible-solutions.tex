@@ -42,11 +42,13 @@
         \subsection{Arduino}
             Looking for another platform for hardware development, one which may encompass a smaller form factor, we may be quickly brought to the popular \textbf{Arduino} brand.
             
-            Arduino as a platform stems from the work of Hernando Barragán, who designed the Wiring development platform in 2003 as a Master's thesis.  His goal was to create a low cost and open platform accessible even to non-engineers\todo{Footnote, "I include this because the history is often misinterpreted, ...}\cite{arduino-untold-history}.  Today the Arduino 
+            Arduino as a platform stems from the work of Hernando Barragán, who designed the Wiring development platform in 2003 as a Master's thesis.  His goal was to create a low cost and open platform accessible even to non-engineers\todo{Footnote, "I include this because the history is often misinterpreted, ...}\cite{arduino-untold-history}.  Today the Arduino \todo{}
             
             There is a variety of boards available in the Arduino family\cite{arduino-products}.  All of them come equipped with a microprocessor, usually from the AVR family, and a set of analog and digital pins.  Some include an USB interface for communication with a computer.
             
             \todo{arduinos \& their prices, also clones}
+            \todo{There may be problems with slow CPU and little memory}
+            \todo{Pictures}
             \subsubsection{Uno}
             
             \subsubsection{Mini}
@@ -56,6 +58,7 @@
             
             \todo{nodemcu, faster than arduino but not a good choice}
         \subsection{Teensy}
+            \todo{Picture}
             \textbf{Teensy} is a family of USB development boards boasting the ARM microprocessor.  It is created by Paul Stoffregen and the latest versions, Teensy~3.5 and Teensy~3.6, were funded successfully through Kickstarter\cite{teensy-35-36-kickstarter}.
             
             \textbf{Teensy~3.6} comes equipped with the the following.
@@ -108,28 +111,36 @@
         \blind[2]
     \section{Concepts}
         Based on this analysis, I have created three distinct Fedorator concepts.
+        \pagebreak
         \subsection{Concept A}
-            \importsvg{concept-a}
+            \svgfigure{concept-a}{concept-a}{Concept A}
             The first concept is a moderately large device which is to be fixed in place and used from a standing posture.  It provides an LCD with on-screen information on the status and progress.  The rotary knob allows for controling the menu and making a selection.  It may be replaced with three buttons if so desired.  There are four USB slots present, each with a corresponding status light.  In order to be stable, the device needs support from the back.
             
             Due to the size of the display and the number of USB ports, putting a Raspberry Pi computer at the core makes the most sense.
             
             The Fedorator needs to be plugged into a power source, so there will be a cable running from the back.
+            \newpage
+        
         \subsection{Concept B}
-            \importsvg{concept-b}
-            The second concept is similar in some ways to the first one, but with some tweaks.  The knob is removed, the sole control if a prominent touchscreen positioned vertically.  As a consequence, the device can be thinner.  There are now only two USB slots.  The device is sleek and symmetric.
+            \svgfigure{concept-b}{concept-b}{Concept B}
+            The second concept is similar in some ways to the first one, but with some tweaks.  The knob is removed, the sole control is a prominent touchscreen positioned vertically.  As a consequence, the device can be thinner.  There are now only two USB slots.  The device is sleek and symmetric.
             
             In order not to have stability issues, it may be necessary to ensure the Fedorator is heavy enough in order to keep the Fedorator in place as it's being used.
             
             This design is also powered by a Raspberry Pi.
+            \newpage
+        
         \subsection{Concept C}
-            \importsvg{concept-c}
+            \svgfigure{concept-c}{concept-c}{Concept C}
             The third and final concept is a radical departure from the first two.  Instead of standing still while being manipulated, this Fedorator is designed to be picked up and held in a hand.  The OLED screen is small yet sharp and despite providing only a binary image it works well enough for our purposes.  The three buttons allow for selecting the desired live image.
             
-            Due to its small size, this device will be powered by an Arduino board.
+            Due to its small size, this device needs a small system at its core.  In an attempt to keep the costs low in contrast to other designs, I will attempt to use the Arduino platform.
             
             This design still needs to be powered by cable.  This cable will be permanently attached by the means of enclosure.  This has the positive side effect of discouraging people from attempting to leave with the Fedorator.
             
             Because it only has a single USB slot, it may be desirable to provide multiple instances of this Fedorator.
+            \newpage
+            
     \section{Choice}
-        I have performed an informal survey showing people these three concepts.  Based on user feedback, people were excited about both designs B and C.  Because they differ so significantly, I will make an attempt at bringing each to reality.
+        I have showed five people these concepts and asked them for their feedack.  In general, response to concept A was lukewarm, however, people were excited about both concept B and C.  Because they differ significantly, I will strive to construct a prototype for each.
+
