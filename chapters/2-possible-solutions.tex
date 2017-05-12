@@ -6,6 +6,41 @@
         \todo{Who will be assembling it?  What will make it easy to assemble?  What are potential obstacles?}
         \blind[2]
     \section{Hardware Options}
+        A device such as this needs a computer at its core.  I shall go over a number of potential candidates, introducing them shortly and weighing their features.
+        \subsection{Raspberry Pi}
+            The Raspberry Pi is a small, inexpensive, and fully equipped single board computer.  It was originally developed to facilitate better teaching of computer classes by enthusiasts at Cambridge\cite{bbc-15-pound-computer}.  The original £15 computer went on to be a much bigger success than anticipated and by November 2016, the total sales have reached ten million units\cite{rpi-ten-million}.
+            
+            Today the Raspberry Pi foundation continues to develop new versions of the computer\cite{rpi-products}.  The latest model is Raspberry Pi 3 Model B, released in February 2016.  It boasts the following features\cite{rpi-3}.
+            
+            \begin{itemize}
+                \item 1.2GHz 64-bit quad-core ARMv8 CPU
+                \item 802.11n Wireless LAN
+                \item Bluetooth 4.1 and Bluetooth Low Energy (BLE)
+                \item 1GB RAM
+                \item 4 USB ports
+                \item 40 GPIO pins
+                \item HDMI port
+                \item Ethernet port
+                \item Combined 3.5mm audio jack and composite video
+                \item Camera interface (CSI) and Display interface (DSI)
+                \item Micro SD card slot
+                \item VideoCore IV 3D graphics core
+            \end{itemize}
+            
+            We can see that some of the necessary components are already included: four USB ports, a MicroSD slot.  This means there is less assembly involved.  For example, we may avoid the need to solder entirely.
+            
+            The dimensions of a Raspberry Pi 3 Model B are 85.60 mm by 56.5 mm (without connectors).  This may prevent it from being used in a more compact design.
+            
+            Raspberry Pis are widely available and there are local distributors, or resellers in most places around the world\cite{rpi-buying-guide}\cite{rpi-buying-links-by-country}.  In the Czech Republic, a Raspberry Pi 3 Model 3 may be bought for between 1~046 and 1~359~CZK\cite{rpi-rpi3-rpishop}\cite{rpi-rpi3-minidroid}\cite{rpi-rpi3-alza}.
+            
+            Finally, due to the sheer popularity of Raspberry Pi, there are many compatible components and accessories available\cite{rpi-rs-components}\cite{rpi-the-pi-hut-store}, such as specially designated touchscreens\cite{rpi-official-touchscreen}.
+            
+            These features, along with the factor of familiarity between hobbyists, make the Raspberry Pi a favorable option for the Fedorator.  The disadvantages include the price, which is being raised by a number of components that are not necessary for the Fedorator, as well as potentially the dimensions.
+        \subsection{Arduino}
+        \subsection{Arduino 2...}
+        \subsection{NodeMCU}
+        \subsection{Teensy}
+        \subsection{Xilinx FPGA}
         \todo{Write a few options.  I have done some of this in the positional report.  I have previously defined these options as FPGA, Arduino, NodeMCU, Raspberry Pi.}
         \todo{Batteries are not an option}
         \blind[4]
@@ -40,7 +75,7 @@
             \importsvg{concept-b}
             The second concept is similar in some ways to the first one, but with some tweaks.  The knob is removed, the sole control if a prominent touchscreen positioned vertically.  As a consequence, the device can be thinner.  There are now only two USB slots.  The device is sleek and symmetric.
             
-            In order not to have stability issues, a heavy weight will likely be necessary to keep the Fedorator in place as it's being used.
+            In order not to have stability issues, it may be necessary to ensure the Fedorator is heavy enough in order to keep the Fedorator in place as it's being used.
             
             This design is also powered by a Raspberry Pi.
         \subsection{Concept C}
