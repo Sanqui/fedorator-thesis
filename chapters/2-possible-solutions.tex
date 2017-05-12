@@ -11,26 +11,26 @@
             \todo{Picture}
             The \textbf{Raspberry Pi} is a small, inexpensive, and fully equipped single board computer.  It was originally developed to facilitate better teaching of computer classes by enthusiasts at Cambridge\cite{bbc-15-pound-computer}.  The original £15 computer went on to be a much bigger success than anticipated and by November 2016, the total sales have reached ten million units\cite{rpi-ten-million}.
             
-            Today the Raspberry Pi foundation continues to develop new versions of the computer\cite{rpi-products}.  The latest model is \textbf{Raspberry Pi 3 Model B}, released in February 2016.  It boasts the following features\cite{rpi-3}.
+            Today the Raspberry Pi foundation continues to develop new versions of the computer\cite{rpi-products}.  The latest model is \textbf{Raspberry Pi~3 Model B}, released in February 2016.  It boasts the following features\cite{rpi-3}.
             
             \begin{itemize}
-                \item 1.2GHz 64-bit quad-core ARMv8 CPU
-                \item 802.11n Wireless LAN
-                \item Bluetooth 4.1 and Bluetooth Low Energy (BLE)
-                \item 1GB RAM
-                \item 4 USB ports
-                \item 40 GPIO pins
-                \item HDMI port
-                \item Ethernet port
-                \item Combined 3.5mm audio jack and composite video
-                \item Camera interface (CSI) and Display interface (DSI)
-                \item Micro SD card slot
-                \item VideoCore IV 3D graphics core
+                \item 1.2GHz 64-bit quad-core ARMv8 CPU,
+                \item 802.11n Wireless LAN,
+                \item Bluetooth 4.1 and Bluetooth Low Energy (BLE),
+                \item 1GB RAM,
+                \item 4 USB ports,
+                \item 40 GPIO pins,
+                \item HDMI port,
+                \item Ethernet port,
+                \item Combined 3.5mm audio jack and composite video,
+                \item Camera interface (CSI) and Display interface (DSI),
+                \item Micro SD card slot,
+                \item VideoCore IV 3D graphics core.
             \end{itemize}
             
             We can see that some of the necessary components are already included: four USB ports, a MicroSD slot.  This means there is less assembly involved.  For example, we may avoid the need to solder entirely.
             
-            The dimensions of a Raspberry Pi 3 Model B are 85.60 mm by 56.5 mm (without connectors).  This may prevent it from being used in a more compact design.
+            The dimensions of a Raspberry Pi~3 Model B are 85.60 by 56.5~mm (without connectors).  This may prevent it from being used in a more compact design.
             
             Raspberry Pis are widely available and there are local distributors, or resellers in most places around the world\cite{rpi-buying-guide}\cite{rpi-buying-links-by-country}.  In the Czech Republic, a Raspberry Pi 3 Model 3 may be bought for between 1~046 and 1~359~CZK\cite{rpi-rpi3-rpishop}\cite{rpi-rpi3-minidroid}\cite{rpi-rpi3-alza}.
             
@@ -46,7 +46,7 @@
             
             There is a variety of boards available in the Arduino family\cite{arduino-products}.  All of them come equipped with a microprocessor, usually from the AVR family, and a set of analog and digital pins.  Some include an USB interface for communication with a computer.
             
-            \todo{arduinos}
+            \todo{arduinos \& their prices, also clones}
             \subsubsection{Uno}
             
             \subsubsection{Mini}
@@ -56,11 +56,26 @@
             
             \todo{nodemcu, faster than arduino but not a good choice}
         \subsection{Teensy}
-            \textbf{Teensy} is a family of USB development boards boasting the ARM microprocessor.  It is created by Paul Stoffregen and the latest version, Teensy 3.5 and Teensy 3.6, were funded successfully through Kickstarter\cite{teensy-35-36-kickstarter}.
+            \textbf{Teensy} is a family of USB development boards boasting the ARM microprocessor.  It is created by Paul Stoffregen and the latest versions, Teensy~3.5 and Teensy~3.6, were funded successfully through Kickstarter\cite{teensy-35-36-kickstarter}.
+            
+            \textbf{Teensy~3.6} comes equipped with the the following.
+            
+            \begin{itemize}
+                \item 180 MHz ARM Cortex-M4 with Floating Point Unit,
+                \item 1M Flash, 256K RAM, 4K EEPROM,
+                \item USB Full Speed (12 Mbit/sec) port,
+                \item USB High Speed (480 Mbit/sec) port,
+                \item Native micro SD card port,
+                \item CAN bus ports, serial, SPI, I2C, I2S, Ethernet and more.
+            \end{itemize}
+            
+            The size is stated as 2.4 by 0.7~inch (about 6 by 1.8~cm).
+            
+            Teensy~3.6 is officially available for 29.25~USD (about 715~CZK) without shipping\cite{teensy-36}, or, for example, at local distributors in the Czech Republic for 1~198~CZK\cite{teensy-36-snailshop}.  The cost is comparable with a Raspberry Pi.  \todo{Unlike pi, ports are not exposed?}
+            
+            The fast CPU, on-board USB host port and MicroSD host port make the Teensy a strong contender.
             
             
-            
-            \todo{2.4 by 0.7 inch}
         \subsection{Xilinx FPGA}
         \todo{Write a few options.  I have done some of this in the positional report.  I have previously defined these options as FPGA, Arduino, NodeMCU, Raspberry Pi.}
         \todo{Batteries are not an option}
