@@ -1,12 +1,46 @@
 \chapter{Interlude: USB Mass Storage}
-    \section{}
-    In order to create a device behaving as an USB host, I have studied the USB specification.
+    USB, standing for Universal Serial Bus, is an industry standard defining the hardware and protocols surrounding connection and communication of electric devices to computers\todo{CITE}.  
     
-    \todo {Also in order to understand speed, behavior, etc...}
+    The USB 1.0 specification was introduced in 1996 and defined data tranfer rates of 1.5~Mbit/s and 12~Mbit/s\cite{hui1394}. \todo{did fast speed only get introduced with 1.1?}  In 2000, the USB 2.0 specification was released, which a significantly higher maximum data transfer rate of 480~Mbit/s\todo{CITE}.
     
-    \todo{These are just notes for now.}
+    The USB 3.0 specification, released in 2008, defines a new SuperSpeed transfer mode.  This mode is claimed to support a transfer speed of up to 5~Gbit/s in full-duplex, with 350~MB/s thoughput in current implementations\cite{usb-3-hp}.  SuperSpeed plugs are distinctively identified by blue inserts. \todo{USB 3.1...?}
+    
+    USB flash drives are data storage devices implementing the USB interface.  Many USB flash drives already implement USB~3.0\cite{wirecutter-best-usb-3-0}, however, all have backwards compatibility as long as they use a traditional USB‑A port.  For our purposes, it's reasonable to assume people will use any old flash drive they have lying around, rather than specifically brand new ones.
+    
+    In order to create a device behaving as an USB host, I have studied the USB~2.0 specification \todo{name/cite}.  Even if I won't be working with USB at a particularly low level, this will help me understand behavior and parameters such as speed.
+    
+    The device I will be designing will only need to support the connection of USB flash drives to a single USB port, so only relevant information is taken in consideration.
+    
+    \section{USB specification}
+        USB is a cable bus providing data exchange between a host device (usually a computer) and several connected peripherals which may be attached and used independently.  USB defines a host-scheduled and token-based protocol for communication with peripherals.
+        
+        A USB system is prescribed as a tiered star topology involving hosts, hubs, and functions.
+        
+        \subsection{USB host}
+            A single host is present in any USB system.  The Host Controller, implemented in hardware or software, has many responsibilities.  It initiates connections and manages all communication and bandwidth between software and connected functions.
+            
+            The USB host also supplies power to connected devices.
+        
+        \subsection{USB device}
+            The USB device is...
+            A USB device may be one of many classes. \todo{..}
+        
+        \subsection{USB hardware}
+            USB uses a four-wire cable, encompassing two data wires and as a V\textsubscript{BUS} and GND pair delivering +5~V power to devices.
+            
+            The clock is transmitted along with data using a clock encoding scheme.  There are three data rates available:
+            \begin{itemize}
+                \item Low-speed, defined at 1.5 Mb/s with limited capacity.
+                \item Full-speed, defined at 12 Mb/s.
+                \item High-speed, defined at 480 Mb/s.
+            \end{itemize}
+        
+        \subsection{USB protocol}
+            On the low level, USB functions as a polled bus.  Transactions, as initiated by the Host Controller, usually involve the transmission of up to three packets.  The token packet allows devices to identify whether they're the intended recipient of the packet.
+            
+            For data transmission, USB offers pipes between 
 
-\begin{verbatim}
+\begin{comment}
     I will only support 2.0 since that's what most mass storage devices have
     
     * Cable bus
@@ -95,11 +129,17 @@
                 * Guaranteed delivery of data, no guarantee of bandwidth and latency
                 * Payload sizes: 8 to 512 (high-speed)
                 * Bulk transfers and control registers deliver independently and possibly before each other
-            
+                    * Page 53: bulk transfer transaction limits
+        * 5.9 high-speed, high bandwidth endpoints?
+            * up to 192 Mb/s
+        * Transfer management
+        * oops I got lost in the depth of this bullet point list
+                    
+    page 62.
                 
     
     
-\end{verbatim}
+\end{comment}
     \todo{SPEEDS (and average TIMES)}
 
 
