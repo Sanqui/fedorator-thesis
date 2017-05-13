@@ -126,22 +126,33 @@
         Every device needs to be powered in some way.  Because the Fedorator will be stationary, we shall let it be powered by cable, preferably a commonly available one like Micro USB.  There is no need to consider a battery.
         \todo{Something is amiss here...}
     \section{Casing Options}
-        When it comes to casing, there aren't many options present.
-        \todo{More options}
+        Because the device will be made of several components, it's desirable to contain them in a case.  There are not many reasonable options present, but I have shortly considered alternatives.
         \subsection{Wood}
             A wooden build would certainly look interesting, even if not modern.  However, because it would have to be handmade, it's not a practical choice.  Few people have wood crafting skills and would invest time in building the moderately complex case.
-        \subsection{Plastic}
-            Generally, plastic casings require ordering a mold, which is an expensive proposition unless an option unless a significant amount of devices is manufactured.
+        
+        \subsection{Plastic with mold}
+            The common manufacturing process for producing plastic parts is called injection molding.  As the name suggests, this method requires the production of a mold, which is an expensive proposition unless a significant amount of devices is manufactured.  It makes no sense to speak of molding when the numbers of parts is less than 1~000\cite{rexplastics-mold-price}.
             
-            \todo{}
         \subsection{3D printed}
+            \todo{image: rebelix 3d printer}
             The advent of 3D printing technology is a staple of today's day and age.  Also called additive manifacturing, it allows for brinigng objects designed on a computer into reality.  Because an object can be printed in the matter of hours, 3D printing is ideal for prototyping.
             
             In tech circles, 3D printers a common find these days.  For example, many hackerspaces have one available\cite{hackerspaces-3d-printers}. It is likely anybody wishing to build a Fedorator would be able to attain access to one.  A 3D printed case is simply the matter of getting ahold of a printer and enough printing material (plastic).
             
-            There may be inconsistencies in color.  \todo{?  Sturdiness?}
-            
             For a technically hobby project like this, a 3D printed case is the logical choice.
+            
+            \subsubsection{3D printing materials}
+                A 3D printer needs to be provided with material to use.  The two most commonly used materials are \textbf{PLA} and \textbf{ABS}\cite{all3dp-best-fileament-types}.  Both are available in a variety of colors and look largely teh same, but they do have a few distinctive properties\cite{all3dp-pla-abs}. 
+                
+                \textbf{PLA} has a harder surface and is more prone to break when bent.  It is well suited for objects such as household items and gadgets.  PLA is made from plant material and is biodegradable.
+                
+                \textbf{ABS} is the stronger material when printed at the correct temperature.  It is well suited for mechanical parts.  When printing, ABS is more prone to warping.  Finally, ABS is not biodegradable.
+                
+                Prices are largely the same between PLA and ABS filaments.
+                
+                PLA as a material is slightly better suited for the purpose of being a static shell.  However, ultimately, both materials should prove to work fine, so creators can choose whichever they have available.
+            
+            \todo{ABS/PLA (we used PLA)}
     \section{Roundup}
         For the \textbf{CPU}\todo{Not the right term, I want to keep saying "heart" or "brain"} of the device, I deem two distinct categories based on form factor.
         
