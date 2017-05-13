@@ -56,7 +56,7 @@
             \todo{There may be problems with slow CPU and little memory}
             \todo{Pictures}
             \subsubsection{Arduino Uno}
-                \imagefigure{arduino-uno-r3.jpg}
+                \imagefigure{arduino-uno.jpg}
                     {Arduino Uno R3 \cite{arduino-wikimedia-uno}}
                 The Arduino Uno is the first board most will lay their eyes on.  It is the most popular Arduino board and it's popular for getting started with hardware development\cite{arduino-uno}.  It boasts the following features.
                 
@@ -113,17 +113,17 @@
             
             Popular FPGA manufacturers include big names such as Xilinx\cite{fpga-xilinx} and Intel\cite{fpga-intel}.  The field of open hardware FPGA tools is lacking, although there do seem to be some contenders, like Papilio\cite{fpga-papilio}. 
             
-            However, programming FPGAs is a task more difficult than software programming, requiring the management of input and output signals and careful timing.  I have deemed the task of implementing the USB protocol at such a low-level complex.
+            However, programming FPGAs is a task significantly more difficult than software programming, requiring the management of input and output signals and careful timing.  I have deemed the task of implementing the USB protocol at such a low-level too complex and out of scope.
             
-            
-        \todo{Batteries are not an option}
         \blind[4]
     \section{Display Options}
         \todo{a}
     \section{Other Component Options}
+        Each component increases the difficulty of assembly, as it imposes the necessity of buying the component, as well as of connecting it properly and seating it in place.
+        
         Basic components such as push-buttons and LEDs are widely available from local distributors.
         
-        However, each component increases the difficulty of assembly, as it imposes the necessity of buying the component, as well as of connecting it properly and seating it in place. 
+        Every device needs to be powered in some way.  Because the Fedorator will be stationary, we shall let it be powered by cable, preferably a commonly available one like Micro USB.  There is no need to consider a battery.
         \todo{Something is amiss here...}
     \section{Casing Options}
         When it comes to casing, there aren't many options present.
@@ -132,8 +132,12 @@
             A wooden build would certainly look interesting, even if not modern.  However, because it would have to be handmade, it's not a practical choice.  Few people have wood crafting skills and would invest time in building the moderately complex case.
         \subsection{Plastic}
             Generally, plastic casings require ordering a mold, which is an expensive proposition unless an option unless a significant amount of devices is manufactured.
+            
+            \todo{}
         \subsection{3D printed}
-            In tech circles, 3D printers a common find these days.  It is likely anybody wishing to build a Fedorator would have access to one.  A 3D printed case is simply the matter of getting ahold of a printer.
+            The advent of 3D printing technology is a staple of today's day and age.  Also called additive manifacturing, it allows for brinigng objects designed on a computer into reality.  Because an object can be printed in the matter of hours, 3D printing is ideal for prototyping.
+            
+            In tech circles, 3D printers a common find these days.  For example, many hackerspaces have one available\cite{hackerspaces-3d-printers}. It is likely anybody wishing to build a Fedorator would be able to attain access to one.  A 3D printed case is simply the matter of getting ahold of a printer and enough printing material (plastic).
             
             There may be inconsistencies in color.  \todo{?  Sturdiness?}
             
