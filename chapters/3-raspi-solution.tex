@@ -5,7 +5,7 @@
         The device consists of:
         \begin{itemize}
             \item Raspberry Pi~3 Model~B.  Compatibility with Raspberry Pi~2 Model~B may be possible, but not a primary goal.
-            \item A compatible 3.5~inch touchscreen.
+            \item A compatible 3.5~inch touchscreen (minimum resolution 480*320 pixels) positioned vertically.
             \item A MicroSD card holding the system and several images.
             \item Two male-to-female USB cables.
             \item A 3D printed case.
@@ -14,7 +14,7 @@
     \section{Software}
         The software running on the Fedorator was written to support support both Raspbian, the Linux distribution designed and officially supported for Raspberry Pi\cite{raspian}, and the eponymous Fedora operating system.  To faciliate easier testing, it's also possible to run the software on a regular Linux desktop.
         
-        The current version of the Fedorator software may be found in the appendix.  It is also made available online on GitHub, a code hosting service, under the \todo{TODO} license\cite{fedorator-github}.  Continued development will take place on GitHub.  
+        The current version of the Fedorator software may be found in the appendix.  It is also made available online on GitHub, a code hosting service, under the \todo{TODO} license\cite{fedorator-github}.  On GitHub, continued development will take place.
         
         The software running on the Fedorator is written in Python and uses the free open-source Kivy framework\cite{kivy} to provide a touchscreen interface.  It is is designed to start immediately after boot and stay running indefinitely.
         
@@ -41,10 +41,10 @@
         
         A progress bar shows how far along the write is.
         
-        After the write is complete, the screen shows "Done!", pulsating in green to grab attention.  It also tells the user they may now safely remove the flash disk.  A single tap at this point will bring the Fedorator back to the standby screen.
+        After the write is complete, the screen shows "Done!", pulsating in green to grab attention.  It also tells the user they may now safely remove the flash drive.  A single tap at this point will bring the Fedorator back to the standby screen.
         
         \screenshotfigure{fedorator-screenshot-done.png}
-            {Fedora LXDE Destkop was sucessfully written to the flash disk.}
+            {Fedora LXDE Destkop was sucessfully written to the flash drive. \todo{Replace the screenshot with one that says "drive" if there's time.}}
         
         If at any point the flash drive is removed, the software goes back to the standby screen.
         
@@ -52,9 +52,12 @@
     \section{Case}
         \imagefigurelarge{openscad-case-screenshot.png}
             {A screenshot of the OpenSCAD software with the case open.  Both the source code and the rendered model can be seen.}
-        I designed the model for the case using the OpenSCAD software.  In OpenSCAD, objects are described in a scripting language.  One consequence is that when a value is used in several places, for example, the length of a certain sub-component, it may only be defined once and used by its name repeatedly.  This allows for easy changes to just about any relevant dimension and also enhances understanding of the source code.  In proper terms, the model I designed is \textit{parametric}.
+        I designed the model for the case using the \textbf{OpenSCAD} software.  In OpenSCAD, objects are described in a scripting language.  One consequence is that when a value such as the length of a certain sub-component is used in several places, it may easily be defined once and used by its name repeatedly.  This allows for easy changes to just about any relevant dimension and also enhances understanding of the source code.  In proper terms, the model I designed is \textit{parametric}.
         
         OpenSCAD allows exporting the model to the STL (STereoLithography) format.  This format can then be processed by a slicing program like Slic3r or Cura to prepare for printing.
+        
+        \imagefigurelarge{case-render.png}
+            {A render of the constructed case, courtesy of OpenSCAD.}
         
         The case I designed for the Fedorator is split into two components, which may be defined as inner and outer, or bottom and top.  These two components are printed separately, but lock together when the device is constructed.
         
@@ -68,7 +71,13 @@
         
     \section{Construction of a Prototype}
         \todo{A prototype will be built.  This should probably include pictures and a short description of the process}
-        \blind[3]
+        I have put a functional prototype of the Fedorator together.
+        
+        The prototype consists of all the required components.  The screen is a 3.5 inch HDMI touchscreen display with support for up to 1920*1080 pixels in resolution\cite{aliexpress-touchscreen}.  However, in the prototype, the resolution is kept as 480*320 to ensure broadest support.  Sadly, drivers for this display are proprietary and only provided for Raspbian\cite{osoyoo-drivers}.  Hence, the prototype runs the Raspbian operating system.
+        
+        \todo{printing process: some small test parts were printed to test fitness, then the full thing, but with a lower height.  It was put together and works.}
+        
+        
     \section{Instructions}
         Instructions on how to build a Fedorator are included in the BUILD.md file of the public repository, also present in the appendix.
         
