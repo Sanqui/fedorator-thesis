@@ -1,5 +1,5 @@
 \chapter{Analysis of Possible Solutions}
-    There are several things which should be taken in account when considering the solutions.
+    There are several things which should be taken in account when considering alternatives.
     
     \textbf{Cost}.  The device may be made by hobbyists without much funding, therefore, cheaper is better.
     
@@ -7,7 +7,7 @@
     
     \textbf{Customizability and extensibility}.  Users with necessary skill should have the freedom to make changes to the Fedorator.  Therefore, the hardware shouldn't be "locked down".  In slang, it should be "hackable".
     
-    \textbf{Long term maintainability}.  Fedora receives new releases approximately every six months\cite{fedora-release-life-cycle}, it is therefore necessary that the Fedorator is capable of keeping up with the times.
+    \textbf{Long term maintainability}.  Fedora receives new releases approximately every six months\cite{fedora-release-life-cycle}, it is therefore necessary that the Fedorator is capable of keeping up with the times.  The hardware should not impose any tight constraints and any software needs to be possible to upgrade.
     
     \todo{more?}
     \section{Hardware Options}
@@ -50,14 +50,34 @@
             
             Arduino as a platform stems from the work of Hernando Barragán, who designed the Wiring development platform in 2003 as a Master's thesis.  His goal was to create a low cost and open platform accessible even to non-engineers\todo{Footnote, "I include this because the history is often misinterpreted, ...}\cite{arduino-untold-history}.  Today the Arduino \todo{}
             
-            There is a variety of boards available in the Arduino family\cite{arduino-products}.  All of them come equipped with a microprocessor, usually from the AVR family, and a set of analog and digital pins.  Some include an USB interface for communication with a computer.
+            There is a broad variety of boards available in the Arduino family\cite{arduino-products}.  All of them come equipped with a microprocessor, usually from the AVR family, and a set of analog and digital pins.  Some include an USB interface for communication with a computer.
             
             \todo{arduinos \& their prices, also clones}
             \todo{There may be problems with slow CPU and little memory}
             \todo{Pictures}
-            \subsubsection{Uno}
+            \subsubsection{Arduino Uno}
+                \imagefigure{arduino-uno-r3.jpg}
+                    {Arduino Uno R3 \cite{arduino-wikimedia-uno}}
+                The Arduino Uno is the first board most will lay their eyes on.  It is the most popular Arduino board and it's popular for getting started with hardware development\cite{arduino-uno}.  It boasts the following features.
+                
+                \begin{itemize}
+                    \item ATmega328 microcontroller clocked at 16 MHz,
+                    \item 32~KB flash memory,
+                    \item 2~KB SRAM,
+                    \item 1~KB EEPROM,
+                    \item 20 digital I/O pins.
+                \end{itemize}
+                
+                The dimensions of the Arduino Uno are 53.4 by 58.6~mm.  It is powered by the uncommon USB Type~B connector.
+                
+                The nominal cost of Arduino Uno is 20.00~EUR (about 530~CZK)\cite{arduino-uno-store}.  However, thanks to open source hardware, the market with clones has driven the price to as low as 3~USD for a fully compatible piece of hardware\cite{arduino-aliexpress-uno-clone}.
             
-            \subsubsection{Mini}
+            \subsubsection{Arduino Nano}
+                \imagefigure{arduino-nano.jpg}
+                    {Arduino Nano \cite{arduino-nano-robotics}}
+                The Arduino Nano is a smaller board which nonetheless packs almost the entire capabilities as the Uno model\cite{arduino-nano}.  
+                \todo{https://www.arduino.cc/en/Main/arduinoBoardNano}
+                
             
         \subsection{ESP8266}
             The \textbf{ESP8266} is a low-cost Wi-Fi chip.  
