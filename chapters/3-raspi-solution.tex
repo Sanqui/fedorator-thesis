@@ -77,7 +77,9 @@
         
         The \textbf{outer part} is majorly the shell and cap.  There are four holes in the shell, one for the display, two for the USB ports, and one in the back for the power cable.
         
-        In a misguided attempt at making the device easy to assemble, I had decided to forego any screws or fastening bolts in the design.
+        Both parts are designed in such a way that they fit snugly together.  The top part can be carefully put over the bottom part and holds well unless taken by force.
+        
+        In a misguided attempt at making the device easy to assemble, I had decided to forego any screws or fastening bolts in the design.  This means the components inside hold by gravity, or are fixed by other means such as a tighening strap.
         
         \todo{anything else? maybe a "for example, the height can be adjusted easily..."}
         
@@ -87,7 +89,31 @@
         
         The prototype consists of all the required components.  The screen is a 3.5 inch HDMI touchscreen display with support for up to 1920*1080 pixels in resolution\cite{aliexpress-touchscreen}.  However, in the prototype, the resolution is kept as 480*320 to ensure broadest support.  Sadly, drivers for this display are proprietary and only provided for Raspbian\cite{osoyoo-drivers}.  Hence, the prototype runs the Raspbian operating system.
         
-        \todo{printing process: some small test parts were printed to test fitness, then the full thing, but with a lower height.  It was put together and works.}
+        The case for the prototype was printed on a LulzBot Mini\cite{lulzbot-mini} 3D printer.  The PLA material was used for filament.
+        
+        \imagefigure{photos/fedorator-prototype-test-print.jpg}
+            {One test print with a Raspberry Pi seated inside.}
+        
+        In order to test the model's dimensions and fitness, a series of test prints was done first.  After certain parameters were verified, such as whether the Raspberry Pi is seated correctly, the full case was set to be printed.  The poor behavior of the test prints with regard to bridges has led to the decision to print the full case with supports\todo{footnote}.
+        
+        Due to the printer's size, the height of this prototype had to be lowered to 172~cm and each part was printed individually.  The print took n and n hours. \todo{n = ?}
+        
+        \imagefigure{photos/fedorator-case-supports.jpg}
+            {The case print complete with supports.}
+        
+        The prints were successful and the device ready to assemble.
+        \todo{Photos from assembly?}
+        
+        \newpage
+        
+        
+        \idkijustwanttwotofitonapagefigure{photos/fedorator-ready.jpg}
+            {The Fedorator prototype with a USB flash drive plugged in.}
+            
+        \idkijustwanttwotofitonapagefigure{photos/fedorator-done.jpg}
+            {The Fedorator prototype done flashing the Fedora Workstation system.}
+        
+        \newpage
         
         
     \section{Instructions}
