@@ -5,7 +5,7 @@
     
     The goal of this thesis is to design and construct a device, dubbed the "Fedorator", which will enable writing Fedora to flash drives as a self-service.  The primary use of the Fedorator would be on marketing stands, where it would be available for visitors to use with any USB flash drive.  This device should be relatively simple to construct using off-the-shelf components, even for a person who haven't seen it in person before.
     \section{How Fedora Spreads Publicity}
-        \todo{Fedora logo?}
+        \svgfigure{fedora-logo-and-wordmark}{Fedora logo and wordmark\cite{fedora-graphic-standards-manual}}
         The Fedora project has a worldwide Ambassador program.  Ambassadors are people who act as representatives of Fedora.  They have a good understanding of Fedora's principles and aim to spread the message to the public\cite{fedora-ambassadors}.  One of the tasks assigned to Fedora Ambassadors is organizing Fedora participation at events.
         \todo{Discusson over Fedora stands on events and conferences}
         \todo{How DVDs are in use}
@@ -38,7 +38,7 @@
             
             \begin{table}[htbp]
             \centering
-            \caption{Examples of USB Duplicators}
+            \caption{Examples of USB Duplicators available on the market}
             \label{usb-duplicators}
                 \begin{tabular}{ m{15em}  c  r  r  c }
                 \toprule
@@ -74,8 +74,16 @@
             In general, the products can be split into two categories: devices that work stand-alone and devices that require a computer to operate.  Devices from the latter category are marked in the table with a dagger (\textdagger).
             
             Besides their price, the trouble with these products is that they are proprietary.  The hardware cannot be built from scratch and the software cannot be inspected or improved.  The devices which are not stand-alone require a computer with specific software and drivers to operate.  Linux support is not claimed, and therefore likely unavailable, leading to a sad and undesired irony of requiring a computer running an OS that is not Linux in order to produce and distribute USB flash drives containing Linux.
-        \subsection{}
+        \subsection{Existing software}
+            A number of software exists to serve the purpose of creating live USB flash drives.  The Fedora Project wiki describes several of them and primarily recommends the use of Fedora Media Writer\cite{fedora-how-to-live-usb}.
+            
+            \subsubsection{Fedora Media Writer}
+                \textbf{Fedora Media Writer} is a desktop application developed by  Jiři Eischmann and Martin Bříza.  It covering the entire process from picking a Fedora release and downloading it, to copying to an USB flash drive.  It was overhauled in 2016 to provide a new user friendly interface\cite{fedora-luc-as-primary-downloadable}.
+                
+                Fedora Media Writer is written in C++ using the Qt framework and supports Linux, Windows, and macOS.
+            
             \todo{Doing it by hand?}
+            \todo{MediaWriter, }
         \subsection{}
             \todo{Does something EXACTLY like fedorator exist?  "My searches brougt up no such thing."  (Actually do the searches though.)} 
     \section{Rationale for a New Solution}
