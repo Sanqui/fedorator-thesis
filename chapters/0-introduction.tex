@@ -78,12 +78,16 @@
             A number of software exists to serve the purpose of creating live USB flash drives.  The Fedora Project wiki describes several of them and primarily recommends the use of Fedora Media Writer\cite{fedora-how-to-live-usb}.
             
             \subsubsection{Fedora Media Writer}
+                \imagefigurelarge{fedora-media-writer-screenshot.png}
+                    {Fedora Media Writer running on Linux \cite{fedora-media-writer-screenshot}}
+                
                 \textbf{Fedora Media Writer} is a desktop application developed by  Jiři Eischmann and Martin Bříza.  It covering the entire process from picking a Fedora release and downloading it, to copying to an USB flash drive.  It was overhauled in 2016 to provide a new user friendly interface\cite{fedora-luc-as-primary-downloadable}.
                 
-                Fedora Media Writer is written in C++ using the Qt framework and supports Linux, Windows, and macOS.
+                Fedora Media Writer is written in C++ using the Qt framework and supports Linux, Windows, and macOS\cite{fedora-media-writer}.  It's a solid and well tested application, however, clearly suited for desktop usage rather than embedded.  I have decided to create software for the Fedorator from scratch rather than attempt to add a new user interface to Fedora Media Writer.  However, the user interface of Fedora Media Writer did prove an inspiration.
+                
+            \subsubsection{Other specialized software}
+                \todo{https://unetbootin.github.io/, however, not recommended for Fedora}
             
-            \todo{Doing it by hand?}
-            \todo{MediaWriter, }
         \subsection{}
             \todo{Does something EXACTLY like fedorator exist?  "My searches brougt up no such thing."  (Actually do the searches though.)} 
     \section{Rationale for a New Solution}
