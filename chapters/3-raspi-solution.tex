@@ -1,35 +1,22 @@
 \chapter{Raspberry Pi-based Solution}
-    \section{Rationale}
-        \todo{What will make this a good choice?}
-        I have chosen to create a solution using the popular Raspberry Pi computer at its core.
-        
-        \todo{Advantages
-            \begin{itemize}
-                \item Full featured computer, runs Fedora in particular (dogfooding)
-                \item Fairly cheap
-                \item Four USBs onboard
-                \item Less worry with soldering
-                \item Many people are already familiar with it as it's popular among hobbyist projects
-            \end{itemize}
-        }
-        \todo{Disadvantages !!!}
-        \blind[2]
+    I have decided to create a Fedorator utilizing the Raspberry Pi computer at its core.  This design is based on the previously introduced Concept B (\ref{pic:concept-b}).
     \section{Specification}
-        \todo{What, exactly, will the device consist of?}
-        The device shall consist of:
+%        \todo{What, exactly, will the device consist of?}
+        The device consists of:
         \begin{itemize}
             \item Raspberry Pi~3 Model~B.  Compatibility with Raspberry Pi~2 Model~B may be possible, but not a primary goal.
             \item A compatible 3.5~inch touchscreen.
             \item A MicroSD card holding the system and several images.
             \item Two male-to-female USB cables.
+            \item A 3D printed case.
         \end{itemize}
     
     \section{Software}
-        The Fedorator supports both Raspbian, the Linux distribution designed and officially supported for Raspberry Pi\cite{raspian}, and the eponymous Fedora operating system.  To faciliate easier testing, it's also possible to start the software on a regular Linux desktop.
+        The software running on the Fedorator was written to support support both Raspbian, the Linux distribution designed and officially supported for Raspberry Pi\cite{raspian}, and the eponymous Fedora operating system.  To faciliate easier testing, it's also possible to run the software on a regular Linux desktop.
         
-        The current version of the Fedorator software may be found in the appendix.  It is also made available online on GitHub, a code hosting service, under the \todo{TODO} license\cite{fedorator-github}, where continued development will take place.  
+        The current version of the Fedorator software may be found in the appendix.  It is also made available online on GitHub, a code hosting service, under the \todo{TODO} license\cite{fedorator-github}.  Continued development will take place on GitHub.  
         
-        The software running on the Fedorator is written in Python and uses the Kivy framework to provide a touchscreen interface.  It is is designed to start immediately after boot and stay running indefinitely.
+        The software running on the Fedorator is written in Python and uses the free open-source Kivy framework\ref{kivy} to provide a touchscreen interface.  It is is designed to start immediately after boot and stay running indefinitely.
         
         In standby, the screen shows prominently the Fedora logo as well as the name of the device (\ref{pic:fedorator-screenshot-standby.png}).  It prompts the user to insert a flash drive.
         
