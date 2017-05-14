@@ -12,11 +12,11 @@
         \end{itemize}
     
     \section{Software}
-        The software running on the Fedorator was written to support support both Raspbian, the Linux distribution designed and officially supported for Raspberry Pi\cite{raspian}, and the eponymous Fedora operating system.  To faciliate easier testing, it's also possible to run the software on a regular Linux desktop.
+        The software running on the Fedorator was written to support support both Raspbian, the Linux distribution designed and officially supported for Raspberry Pi \cite{raspian}, and the eponymous Fedora operating system.  To faciliate easier testing, it's also possible to run the software on a regular Linux desktop.
         
-        The current version of the Fedorator software may be found in the appendix.  It is also made available online on GitHub, a code hosting service, under the \todo{TODO} license\cite{fedorator-github}.  On GitHub, continued development will take place.
+        The current version of the Fedorator software may be found in the appendix.  It is also made available online on GitHub, a code hosting service, under the \todo{TODO} license \cite{fedorator-github}.  On GitHub, continued development will take place.
         
-        The software running on the Fedorator is written in Python and uses the free open source Kivy framework\cite{kivy} to provide a touchscreen interface.  It is is designed to start immediately after boot and stay running indefinitely.
+        The software running on the Fedorator is written in Python and uses the free open source Kivy framework \cite{kivy} to provide a touchscreen interface.  It is is designed to start immediately after boot and stay running indefinitely.
         
         \subsection{Behavior}
             In standby, the screen shows prominently the Fedora logo as well as the name of the device (\ref{pic:fedorator-screenshot-standby.png}).  It prompts the user to insert a flash drive.
@@ -51,13 +51,13 @@
             
             \todo{more words?}
         \section{Technical implementation}
-            The Fedorator software leverages features provided by the Linux operating system for its feature set.  Following the widely discussed UNIX "Everything is a File" philosophy\cite{ph7spot-unix-file}, certain convenient directories provide information about the connected devices after the kernel takes care of them.
+            The Fedorator software leverages features provided by the Linux operating system for its feature set.  Following the widely discussed UNIX "Everything is a File" philosophy \cite{ph7spot-unix-file}, certain convenient directories provide information about the connected devices after the kernel takes care of them.
             
             In particular, \texttt{/dev/disk/by-path} is used to watch for newly connected USB storage devices, and \texttt{/proc/partitions} is queried for information on the size of the medium.
             
             The primary function is the flashing operation.  After a write is initiated, the \texttt{umount} command is called on the target partition, because writing to a device which is mounted may result in corruption.
             
-             Next, the software performs a direct copy to the USB disk.  This is akin to the \texttt{dd} utility.  In order to achieve the best performance, the \texttt{sendfile()}\cite{man-sendfile} function is used.  Because \texttt{sendfile()} performs copying directly in the kernel, it is faster than an equivalent task involving reads and subsequent writes.
+             Next, the software performs a direct copy to the USB disk.  This is akin to the \texttt{dd} utility.  In order to achieve the best performance, the \texttt{sendfile()} \cite{man-sendfile} function is used.  Because \texttt{sendfile()} performs copying directly in the kernel, it is faster than an equivalent task involving reads and subsequent writes.
             
             After the copy finishes from the perspective of the system, it is actually not yet safe to remove the flash drive.  The flash drive keeps an internal buffer and may need more time in order to finish writing the data.  By utilizing the \texttt{udisksctl power-off} command, we issue the system to shut down and unplug the USB device as soon as it stops being busy.
             
@@ -87,9 +87,9 @@
 %        \todo{A prototype will be built.  This should probably include pictures and a short description of the process}
         I have put a functional prototype of the Fedorator together.
         
-        The prototype consists of all the required components.  The screen is a 3.5 inch HDMI touchscreen display with support for up to 1920*1080 pixels in resolution\cite{aliexpress-touchscreen}.  However, in the prototype, the resolution is kept as 480*320 to ensure broadest support.  Sadly, drivers for this display are proprietary and only provided for Raspbian\cite{osoyoo-drivers}.  Hence, the prototype runs the Raspbian operating system.
+        The prototype consists of all the required components.  The screen is a 3.5 inch HDMI touchscreen display with support for up to 1920*1080 pixels in resolution \cite{aliexpress-touchscreen}.  However, in the prototype, the resolution is kept as 480*320 to ensure broadest support.  Sadly, drivers for this display are proprietary and only provided for Raspbian \cite{osoyoo-drivers}.  Hence, the prototype runs the Raspbian operating system.
         
-        The case for the prototype was printed on a LulzBot Mini\cite{lulzbot-mini} 3D printer.  The PLA material was used for filament.
+        The case for the prototype was printed on a LulzBot Mini \cite{lulzbot-mini} 3D printer.  The PLA material was used for filament.
         
         \imagefigure{photos/fedorator-prototype-test-print.jpg}
             {One test print with a Raspberry Pi seated inside}
