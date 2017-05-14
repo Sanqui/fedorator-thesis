@@ -22,19 +22,19 @@
             In standby, the screen shows prominently the Fedora logo as well as the name of the device (\ref{pic:fedorator-screenshot-standby.png}).  It prompts the user to insert a flash drive.
             
             \screenshotfigure{fedorator-screenshot-standby.png}
-                {The standby screen.}
+                {Fedorator: the standby screen}
             
             When the user inserts a flash drive, the text changes, stating "Tap to begin".  The size of the flash drive is also displayed at the bottom part of the screen.
             
             Tapping will transition the screen into a menu listing releases available for writing (\ref{pic:fedorator-screenshot-list.png}).  This list can be browsed by a swiping a finger or stylus across the screen.  Tapping the top left corner will always bring the user back to the previous screen, as indicated by the faint "back" text. 
             
             \screenshotfigure{fedorator-screenshot-list.png}
-                {Picking a release from the list.}
+                {Fedorator: picking a release from the list}
             
             After tapping a desired release, a screen with details is presented (\ref{pic:fedorator-screenshot-details.png}).  It contains a short official description of the release and offers to set the version and architecture, should the user wish for something other than the defaults.
             
             \screenshotfigure{fedorator-screenshot-details.png}
-                {Taking a look at the Fedora Workstation release.}
+                {Fedorator: taking a look at the Fedora Workstation release}
             
             If the user is happy with the choice, they can press the sizeable "Flash" button.  This begins the process of writing the image to the flash drive.
             
@@ -45,7 +45,7 @@
             After the write is complete, the screen shows "Done!", pulsating in green to grab attention.  It also tells the user they may now safely remove the flash drive.  A single tap at this point will bring the Fedorator back to the standby screen.
             
             \screenshotfigure{fedorator-screenshot-done.png}
-                {Fedora LXDE Destkop was sucessfully written to the flash drive. \todo{Replace the screenshot with one that says "drive" if there's time.}}
+                {Fedorator: Fedora LXDE Destkop was sucessfully written to the flash drive \todo{Replace the screenshot with one that says "drive" if there's time.}}
             
             If at any point the flash drive is removed, the software goes back to the standby screen.
             
@@ -63,13 +63,13 @@
             
     \section{Case}
         \imagefigurelarge{openscad-case-screenshot.png}
-            {A screenshot of the OpenSCAD software with the case open.  Both the source code and the rendered model can be seen.}
-        I designed the model for the case using the \textbf{OpenSCAD} software.  In OpenSCAD, objects are described in a scripting language.  One consequence is that when a value such as the length of a certain sub-component is used in several places, it may easily be defined once and used by its name repeatedly.  This allows for easy changes to just about any relevant dimension and also enhances understanding of the source code.  In proper terms, the model I designed is \textit{parametric}.
+            {A screenshot of the OpenSCAD software with the case open.  Both the source code and the rendered model can be seen}
+        I created the model for the case using the \textbf{OpenSCAD} software.  In OpenSCAD, objects are designed using a descriptive language.  One consequence is that when a value such as the length of a certain sub-component is used in several places, it may easily be defined once and used by its name repeatedly.  This allows for easy changes to just about any relevant dimension and also enhances understanding of the source code.  In proper terms, the model I designed is \textit{parametric}.
         
         OpenSCAD allows exporting the model to the STL (STereoLithography) format.  This format can then be processed by a slicing program like Slic3r or Cura to prepare for printing.
         
         \imagefigurelarge{case-render.png}
-            {A render of the constructed case, courtesy of OpenSCAD.}
+            {A render of the constructed case, courtesy of OpenSCAD}
         
         The case I designed for the Fedorator is split into two components, which may be defined as inner and outer, or bottom and top.  These two components are printed separately, but lock together when the device is constructed.
         
@@ -92,14 +92,14 @@
         The case for the prototype was printed on a LulzBot Mini\cite{lulzbot-mini} 3D printer.  The PLA material was used for filament.
         
         \imagefigure{photos/fedorator-prototype-test-print.jpg}
-            {One test print with a Raspberry Pi seated inside.}
+            {One test print with a Raspberry Pi seated inside}
         
         In order to test the model's dimensions and fitness, a series of test prints was done first.  After certain parameters were verified, such as whether the Raspberry Pi is seated correctly, the full case was set to be printed.  The poor behavior of the test prints with regard to bridges has led to the decision to print the full case with supports\todo{footnote}.
         
         Due to the printer's size, the height of this prototype had to be lowered to 172~cm and each part was printed individually.  The print took n and n hours. \todo{n = ?}
         
         \imagefigure{photos/fedorator-case-supports.jpg}
-            {The case print complete with supports.}
+            {The case print complete with supports}
         
         The prints were successful and the device ready to assemble.
         \todo{Photos from assembly?}
@@ -108,10 +108,10 @@
         
         
         \idkijustwanttwotofitonapagefigure{photos/fedorator-ready.jpg}
-            {The Fedorator prototype with a USB flash drive plugged in.}
+            {The Fedorator prototype with a USB flash drive plugged in}
             
         \idkijustwanttwotofitonapagefigure{photos/fedorator-done.jpg}
-            {The Fedorator prototype done flashing the Fedora Workstation system.}
+            {The Fedorator prototype done flashing the Fedora Workstation system}
         
         \newpage
         
