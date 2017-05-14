@@ -64,7 +64,7 @@
         
         A number of subclasses and transport protocols is defined for the MSC.  MSC allows for certain protocols defined outside of USB to be used, such as SCSI or totally obscure ones like QIC-157 or SFF-8070i.  The USB defined transports are Bulk-Only transport (BBB or BOT) and the obsolete Control/Bulk/Interrupt (CBI) transport, only in use for USB floppy disk drives\cite{usb-mass-storage}\cite{usb-mass-bulk}.
         
-        Particularly high performance mass storage devices tend to use the SCSI standard\cite{usb-electronicdesign-usb-uasp-bot}, but because USB Attached SCSI protocol (UASB) was only specified when USB 3.0 was introduced, few devices have adopted it so far\cite{usb-winaero-usb-scsi-uas}.  In particular, as late as 2012, almost all USB flash drives on the market implemented only the BBB protocol\cite{usb-qemu-usb-storage}.
+        As of USB 3.0, there are provisions for a USB Attached SCSI protocol (UASB) protocol.  Particularly high performance mass storage devices may use that standard\cite{usb-electronicdesign-usb-uasp-bot}, but few devices have adopted it so far\cite{usb-winaero-usb-scsi-uas}.  In particular, as late as 2012, almost all USB flash drives on the market implemented only the BBB protocol\cite{usb-qemu-usb-storage}.
         
         \todo{XXX that's not quite true, SCSI is in use **VIA** the BOT transport, and UASB is just anew transport in the next usb revision!!  Fixme!}
         \todo{If I have time I should describe BBB/BOT...}
