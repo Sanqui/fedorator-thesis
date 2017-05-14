@@ -4,11 +4,12 @@
     The community behind the free Linux distribution called Fedora\cite{fedora} has been giving out live DVDs which let people try and install Fedora at home.  However, recently a decision was made and Fedora 25 is the last release which will be distributed on DVDs in the European region. \todo{footnote}  This is because as time advances, less computers actually have a DVD drive.  In the past few years, laptops have been getting thinner and come without DVD drives\cite{laptopdvd}.  Most computers nowadays are capable of booting from an USB flash drive just as well as from disk drives\cite{fedora-how-to-live-usb}.
     
     The goal of this thesis is to design and construct a device, dubbed the "Fedorator", which will enable writing Fedora to flash drives as a self-service.  The primary use of the Fedorator would be on marketing stands, where it would be available for visitors to use with any USB flash drive.  This device should be relatively simple to construct using off-the-shelf components, even for a person who haven't seen it in person before.
+    
     \section{How Fedora Spreads Publicity}
         \svgfigure{fedora-logo-and-wordmark}{Fedora logo and wordmark\cite{fedora-graphic-standards-manual}}
         The Fedora project has a worldwide Ambassador program.  Ambassadors are people who act as representatives of Fedora.  They have a good understanding of Fedora's principles and aim to spread the message to the public\cite{fedora-ambassadors}.  One of the tasks assigned to Fedora Ambassadors is organizing Fedora participation at events.
         
-        In the Czech Republic, Fedora holds stands on events such as Linux Days\cite{linux-days}, InstallFest\cite{install-fest}, or PyCon CZ\cite{pycon-cz}.
+        In the Czech Republic, Fedora holds stands on events such as Linux Days\cite{linux-days}, InstallFest\cite{install-fest}, or PyCon CZ\cite{pycon-cz}.  An Ambassador's task at the stand might be to set it up, bring out the merchandise, and then speak with visitors, who may be familiar with Fedora and have questions, or have never heard about it before.
         
         Fedora Ambassadors are not necessarily people of technical expertise.  For example, a Fedora Ambassador might also be involved in the Fedora project as a translator.
     \section{Existing solutions}
@@ -28,9 +29,7 @@
                 \item 500 units
             \end{itemize}
             
-            Most services, rather than show a cost upfront, ask the user to fill in a form and get a personalized quote.  I have asked for a quote from two services and received no response.
-            
-            \todo{ https://www.memorysuppliers.com/ http://www.flashbay.com https://www.premiumusb.com/usb-preloading http://www.memotrek.com/usb/usb-flash-drives-clip-n-easy : 4.19 USD}
+            Most services, rather than show a cost upfront, appear to ask the user to fill in a form and get a personalized quote\cite{memorysuppliers}\cite{flashbay}\cite{premiumusb}.  I have asked for a quote from two services and received no response.  The company MemoTrek offered for the specified parameters the price of 4.19~USD (about 100~CZK) per flash drive\cite{memotrek-clip-n-easy}.  However, they only offer data duplication of up to 1~GB, while most bootable images go over that volume.
         
         \subsection{USB Duplicators}
             Rather than using a service and ordering flash drives already preloaded, we can acquire dedicated hardware and do the task ourselves.  There are several products available on the market, called "USB Duplicators", which claim to provide this functionality.  Some examples are provided, with the number of ports and to-date cost in USD and CZK (only informative).
@@ -56,14 +55,16 @@
                  & 10  & \$315    &  7~764 CZK  & \cite{product-altarec-10}        \\
                 \hline
                 Intelligent 9 Series (UB910G) - GOLD Factory series 1 - 9 Target USB Flash Memory/Pen Drive/External USB Hard Drive Duplicator
-                 & 9   & \$1~260  &  31~056 CZK & \cite{product-intelligent-9}       \\
+                 & 9   & \$1~260  &  31~056 CZK & \cite{product-intelligent-9}     \\ 
+                \hline
+                USB Stick Copystation\textdagger
+                 & 7   & Unk.     &        Unk. & \cite{product-copystation} \\ 
                 \hline
                 EZ Dupe 2
                  & 3   & \$81     &   1~997 CZK & \cite{product-ezdupe}       \\
                 \hline
                 \end{tabular}
             \end{table}
-            \todo{Another dagger example}
             
             \imagefigure{vinpower-usbshark.jpg}
                 {VINPOWER Black 1 to 11 USBShark \cite{product-vinpower-11}}
@@ -72,7 +73,7 @@
             
             In general, the products can be split into two categories: devices that work stand-alone and devices that require a computer to operate.  Devices from the latter category are marked in the table with a dagger (\textdagger).
             
-            Besides their price, the trouble with these products is that they are proprietary.  The hardware cannot be built from scratch and the software cannot be inspected or improved.  The devices which are not stand-alone require a computer with specific software and drivers to operate.  Linux support is not claimed, and therefore likely unavailable, leading to a sad and undesired irony of requiring a computer running an OS that is not Linux in order to produce and distribute USB flash drives containing Linux.
+            Besides their price, the trouble with these products is that they are proprietary.  The hardware cannot be built from scratch and the software cannot be inspected or improved.  Support for creating bootable USB flash drives is not in most cases guaranteed, and indeed people have been burned before\cite{open-security-research-simple-duplicator}.  The devices which are not stand-alone require a computer with specific software and drivers to operate.  Linux support is not claimed, which can usually be interpreted as unavailable, leading to a sad and undesired irony of requiring a computer running an OS that is not Linux in order to produce and distribute USB flash drives containing Linux.
         \subsection{Existing software}
             A number of software exists to serve the purpose of creating live USB flash drives.  The Fedora Project wiki describes several of them and primarily recommends the use of Fedora Media Writer\cite{fedora-how-to-live-usb}.
             
@@ -85,25 +86,29 @@
                 Fedora Media Writer is written in C++ using the Qt framework and supports Linux, Windows, and macOS\cite{fedora-media-writer}.  It's a solid and well tested application, however, clearly suited for desktop usage rather than embedded.  I have decided to create software for the Fedorator from scratch rather than attempt to add a new user interface to Fedora Media Writer.  However, the user interface of Fedora Media Writer did prove an inspiration.
                 
             \subsubsection{Other specialized software}
-                \todo{https://unetbootin.github.io/, however, not recommended for Fedora}
+                Another piece of software called \textbf{UNetbootin} allows for installing a wide variety of distributions onto flash drives.  Its user interface is not as sleek as Fedora Media Writer's, lacking in logos and screenshots.  The Fedora images installed by UNetBootin are known to exhibit issues\cite{fedora-how-to-live-usb}\cite{unix-stack-exchange-error-installing-fedora-24}.
             
-        \subsection{}
-            \todo{Does something EXACTLY like fedorator exist?  "My searches brougt up no such thing."  (Actually do the searches though.)} 
+        \subsection{Dedicated open source hardware}
+            I have attempted a search to discover if somebody has created an open source and open hardware USB copier before.  I found many small scripts for copying USB flash drives\cite{github-usbmk}\cite{github-auc-automaticly-usb-copier}\cite{github-udev_serialcopier}.  None had any sort of hardware design.
+            
+            The blog post titled "A Simple USB Thumb Drive Duplicator on the Cheap" by Open Security Research\cite{open-security-research-simple-duplicator} offers advice on how to use an USB hub and Linux commands to duplicate to several flash drives at once. 
+            
     \section{Rationale for a New Solution}
         There are several advantages to designing a solution from scratch.
         
         \begin{itemize}
-            \item It will be a free and open solution under a permissive license, allowing others to give improvements.
+            \item It will be a free and open solution under a permissive license, allowing others to contribute improvements.
             \item It allows us to create a customized interface with image options.
             \item It means we can design customized and attractive branding.
             \item The total cost may be lower.
-            \item \todo{More advantages}
+            \item \todo{More advantages?}
         \end{itemize}
         
         There are also several disadvantages. 
         \begin{itemize}
             \item A person needs to invest time into building the device.
-            \item \todo{More disadvantages}
+            \item It may not be as compatible, or "battle tested" as commercial solutions.\todo{FOOTNOTE}
+            \item \todo{More disadvantages?}
             \item We may run into other unexpected issues.
         \end{itemize}
         
