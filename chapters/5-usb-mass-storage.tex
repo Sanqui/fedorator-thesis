@@ -1,4 +1,8 @@
 \chapter{Interlude: USB Mass Storage}
+    In the previous chapter, I created a USB flash drive copier solution using the Raspberry Pi computer.  Thanks to the computer running a full operating system, all the details of the USB protocol were handled transparently and kept away from me.  However, for a solution closer to bare metal, this will not be the case.  In order to have any hope of understanding the problem space, I committed to study the parts of the USB protocol relevant to understanding mass storage.
+    
+    \section{Introduction to USB}
+    
     USB, standing for Universal Serial Bus, is an industry standard defining the hardware and protocols surrounding connection and communication of electric devices to computers\todo{CITE}.  
     
     The USB 1.0 specification was introduced in 1996 and defined data tranfer rates of 1.5~Mbit/s and 12~Mbit/s\cite{hui1394}. \todo{did fast speed only get introduced with 1.1?}  In 2000, the USB 2.0 specification was released, which a significantly higher maximum data transfer rate of 480~Mbit/s\todo{CITE}.
@@ -58,10 +62,11 @@
     \section{USB mass storage device class}
         The USB mass storage device class, or MSC for short, is a set of protocols allowing an USB device to enable the host to directly access a data storage.  A device implementing this protocol usually appears as an external hard drive.  All sorts of devices implement MSC, including hard drives, optical drives, solid state drives, card readers, or instruments such as cameras and mobile phones\cite{usb-keil-msc}.
         
-        A number of subclasses and transport protocols is defined for the MSC.  MSC allows for certain protocols defined outside of USB to be used, such as SCSI or more obscure ones like QIC-157 or SFF-8070i.  The USB defined protocols include the Bulk-Only transport (BBB or BOT) and the obsolete Control/Bulk/Interrupt (CBI) transport, only in use for USB floppy disk drives\cite{usb-mass-storage}\cite{usb-mass-bulk}.
+        A number of subclasses and transport protocols is defined for the MSC.  MSC allows for certain protocols defined outside of USB to be used, such as SCSI or totally obscure ones like QIC-157 or SFF-8070i.  The USB defined protocols include the Bulk-Only transport (BBB or BOT) and the obsolete Control/Bulk/Interrupt (CBI) transport, only in use for USB floppy disk drives\cite{usb-mass-storage}\cite{usb-mass-bulk}.
         
         Particularly high performance mass storage devices tend to use the SCSI standard\cite{usb-electronicdesign-usb-uasp-bot}, but because USB Attached SCSI protocol (UASB) was only specified when USB 3.0 was introduced, few devices have adopted it so far\cite{usb-winaero-usb-scsi-uas}.  In particular, as late as 2012, almost all USB flash drives on the market implemented only the BBB protocol\cite{usb-qemu-usb-storage}.
         
+        \todo{XXX that's not quite true, SCSI is in use **VIA** the BOT transport, and UASB is just anew transport in the next usb revision!!  Fixme!}
         \todo{If I have time I should describe BBB/BOT...}
 
 \begin{comment}
