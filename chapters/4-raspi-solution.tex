@@ -14,7 +14,7 @@
     \section{Software}
         The software running on the Fedorator was written to support support both Raspbian, the Linux distribution designed and officially supported for Raspberry Pi \cite{raspian}, and the eponymous Fedora operating system.  To faciliate easier testing, it's also possible to run the software on a regular Linux desktop.
         
-        The current version of the Fedorator software may be found in the appendix.  It is also made available online on GitHub, a code hosting service, under the \todo{TODO} license \cite{fedorator-github}.  On GitHub, continued development will take place.
+        The current version of the Fedorator software may be found in the appendix.  It is also made available online on GitHub, a code hosting service, with the GNU General Public License v2.0 \cite{fedorator-github}.  On GitHub, continued development will take place.
         
         The software running on the Fedorator is written in Python and uses the free open source Kivy framework \cite{kivy} to provide a touchscreen interface.  It is is designed to start immediately after boot and stay running indefinitely.
         
@@ -24,9 +24,9 @@
             \screenshotfigure{fedorator-screenshot-standby.png}
                 {Fedorator: the standby screen}
             
-            When the user inserts a flash drive, the text changes, stating "Tap to begin".  The size of the flash drive is also displayed at the bottom part of the screen.
+            When the user inserts a flash drive, the text changes, stating ``Tap to begin".  The size of the flash drive is also displayed at the bottom part of the screen.
             
-            Tapping will transition the screen into a menu listing releases available for writing (\ref{pic:fedorator-screenshot-list.png}).  This list can be browsed by a swiping a finger or stylus across the screen.  Tapping the top left corner will always bring the user back to the previous screen, as indicated by the faint "back" text. 
+            Tapping will transition the screen into a menu listing releases available for writing (\ref{pic:fedorator-screenshot-list.png}).  This list can be browsed by a swiping a finger or stylus across the screen.  Tapping the top left corner will always bring the user back to the previous screen, as indicated by the faint ``back" text. 
             
             \screenshotfigure{fedorator-screenshot-list.png}
                 {Fedorator: picking a release from the list}
@@ -36,20 +36,20 @@
             \screenshotfigure{fedorator-screenshot-details.png}
                 {Fedorator: taking a look at the Fedora Workstation release}
             
-            If the user is happy with the choice, they can press the sizeable "Flash" button.  Before the flashing operation begins, a popup appears warning the user that all data on the flash disk will be destroyed.  The user must acknowledge this with the "Continue" button, and that begins the process of writing the image to the flash drive.
+            If the user is happy with the choice, they can press the sizeable ``Flash" button.  Before the flashing operation begins, a popup appears warning the user that all data on the flash disk will be destroyed.  The user must acknowledge this with the ``Continue" button, and that begins the process of writing the image to the flash drive.
             
             %\todo{(fedorator) Do I want to change the button from "Flash" to "Write" or such?  Also, Maybe add a warning about this being a destructive action}
             
             A progress bar shows how far along the write is.
             
-            After the write is complete, the screen shows "Done!", pulsating in green to grab attention.  It also tells the user they may now safely remove the flash drive.  A single tap at this point will bring the Fedorator back to the standby screen.
+            After the write is complete, the screen shows ``Done!", pulsating in green to grab attention.  It also tells the user they may now safely remove the flash drive.  A single tap at this point will bring the Fedorator back to the standby screen.
             
             \screenshotfigure{fedorator-screenshot-done.png}
-                {Fedorator: Fedora LXDE Destkop was sucessfully written to the flash drive \todo{Replace the screenshot with one that says "drive" if there's time.}}
+                {Fedorator: Fedora LXDE Destkop was sucessfully written to the flash drive} % \todo{Replace the screenshot with one that says "drive" if there's time.}}
             
             If at any point the flash drive is removed, the software goes back to the standby screen.
             
-            \todo{more words?}
+            %\todo{more words?}
         \section{Technical implementation}
             The Fedorator software leverages features provided by the Linux operating system for its feature set.  Following the widely discussed UNIX "Everything is a File" philosophy \cite{ph7spot-unix-file}, certain convenient directories provide information about the connected devices after the kernel takes care of them.
             
@@ -59,7 +59,7 @@
             
              Next, the software performs a direct copy to the USB disk.  This is akin to the \texttt{dd} utility.  In order to achieve the best performance, the \texttt{sendfile()} \cite{man-sendfile} function is used.  Because \texttt{sendfile()} performs copying directly in the kernel, it is faster than an equivalent task involving reads and subsequent writes.
             
-            After the copy finishes from the perspective of the system, it is actually not yet safe to remove the flash drive.  The flash drive keeps an internal buffer and may need more time in order to finish writing the data.  By utilizing the \texttt{udisksctl power-off} command, we issue the system to shut down and unplug the USB device as soon as it stops being busy.
+            After the copy finishes from the perspective of the system, it is actually not yet safe to remove the flash drive.  Flash drives keep an internal buffer and may need more time in order to finish writing the data.  By utilizing the \texttt{udisksctl power-off} command, we issue the system to shut down and unplug the USB device as soon as it stops being busy.
             
     \section{Case}
         \imagefigurelarge{openscad-case-screenshot.png}
@@ -81,7 +81,7 @@
         
         In a misguided attempt at making the device easy to assemble, I had decided to forego any screws or fastening bolts in the design.  This means the components inside hold by gravity, or are fixed by other means such as a tighening strap.
         
-        \todo{anything else? maybe a "for example, the height can be adjusted easily..."}
+        %\todo{anything else? maybe a "for example, the height can be adjusted easily..."}
         
     \section{Construction of a Prototype}
 %        \todo{A prototype will be built.  This should probably include pictures and a short description of the process}
@@ -94,15 +94,15 @@
         \imagefigure{photos/fedorator-prototype-test-print.jpg}
             {One test print with a Raspberry Pi seated inside}
         
-        In order to test the model's dimensions and fitness, a series of test prints was done first.  After certain parameters were verified, such as whether the Raspberry Pi is seated correctly, the full case was set to be printed.  The poor behavior of the test prints with regard to bridges has led to the decision to print the full case with supports\todo{footnote}.
+        In order to test the model's dimensions and fitness, a series of test prints was done first.  After certain parameters were verified, such as whether the Raspberry Pi is seated correctly, the full case was set to be printed.  The poor behavior of the test prints with regard to bridges has led to the decision to print the full case with supports\footnote{Supports are brittle, easy to remove material printed under overhangs in the object.}.
         
-        Due to the printer's size, the height of this prototype had to be lowered to 172~cm and each part was printed individually.  The print took n and n hours. \todo{n = ?}
+        Due to the printer's size, the height of this prototype had to be lowered to 172~cm and each part was printed individually.  Each part took about ten hours to print. \todo{exact numbers?}
         
         \imagefigure{photos/fedorator-case-supports.jpg}
             {The case print complete with supports}
         
         The prints were successful and the device ready to assemble.
-        \todo{Photos from assembly?}
+        %\todo{Photos from assembly?}
         
         \newpage
         
@@ -142,8 +142,8 @@
         
         Overall, creating the device was a success, although there is still work to be done.  I'm not satisfied with the components used for the prototype, in particular, the proprietary screen.  I would like to be able to recommend a standard screen, so I will be searching for alternatives.
         
-        Another sore point is the lack of fixation for the components.  During regular usage, the screen may wiggle a small amount or be at a slightly off angle.  The next iteration on this design will include screws, fasteing bolts, or a similar "tried and tested" solution.
+        Another sore point is the lack of fixation for the components.  During regular usage, the screen may wiggle a small amount or be at a slightly off angle.  The next iteration on this design will include screws, fasteing bolts, or a similar ``tried and tested" solution.
         
         The software works well and can be improved easily.  Continued development may bring features such as the addition of secondary data partitions to the resulting flash drives.
         
-        \todo{I still haven't done the speed measuring thing...}
+        %\todo{I still haven't done the speed measuring thing...}

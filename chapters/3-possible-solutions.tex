@@ -5,11 +5,11 @@
     
     \textbf{Ease of assembly}.  The people who will be building the device may not be professionals, so making it as simple to set up as possible is desirable.  However, somebody who decides to fabricate a Fedorator is likely an ethusiast with some amounts of technical expertise, so there is no need to be overboard if it hampered other factors.
     
-    \textbf{Customizability and extensibility}.  Users with necessary skill should have the freedom to make changes to the Fedorator.  Therefore, the hardware shouldn't be "locked down".  In slang, it should be "hackable".
+    \textbf{Customizability and extensibility}.  Users with necessary skill should have the freedom to make changes to the Fedorator.  Therefore, the hardware shouldn't be locked down.  In slang, it should be ``hackable".
     
     \textbf{Long term maintainability}.  Fedora receives new releases approximately every six months \cite{fedora-release-life-cycle}, it is therefore necessary that the Fedorator is capable of keeping up with the times.  The hardware should not impose any tight constraints and any software needs to be possible to upgrade.
     
-    \todo{more?}
+    %\todo{more?}
     \section{Hardware Options}
         A device such as this needs a computer at its core.  I shall go over a number of potential candidates, introducing them shortly and weighing their features.
         \subsection{Raspberry Pi}
@@ -34,13 +34,13 @@
                 \item VideoCore IV 3D graphics core.
             \end{itemize}
             
-            We can see that some of the necessary components are already included: four USB ports, a MicroSD slot.  This means there is less assembly involved.  For example, we may avoid the need to solder entirely.
+            We can see that some of the necessary components are already included: four USB ports and a MicroSD slot.  This means there is less assembly involved.  For example, we may avoid the need to solder entirely.
             
-            The dimensions of a Raspberry Pi~3 Model B are 85.60 by 56.5~mm (without connectors).  This may prevent it from being used in a more compact design.
+            The dimensions of a Raspberry Pi~3 Model B are 85.6 by 56.5~mm (without connectors).  This may prevent it from being used in a more compact design.
             
             Raspberry Pis are widely available and there are local distributors, or resellers in most places around the world \cite{rpi-buying-guide} \cite{rpi-buying-links-by-country}.  In the Czech Republic, a Raspberry Pi 3 Model 3 may be bought for between 1~046 and 1~359~CZK \cite{rpi-rpi3-rpishop} \cite{rpi-rpi3-minidroid} \cite{rpi-rpi3-alza}.
             
-            The Raspberry Pi is open hardware with the exception of the Broadcom SoC.  For an operating system, many Linux distributions provide support \cite{rpi-opensource}.  Being a computer running a full operating system, support for acting as a USB host device comes naturally.
+            The Raspberry Pi is open hardware with the exception of the Broadcom SoC\footnote{System on a Chip} containing the video core.  For an operating system, many Linux distributions provide support \cite{rpi-opensource}.  Being a computer running a full operating system, support for acting as a USB host device comes naturally.
             
             Finally, due to the sheer popularity of Raspberry Pi, there are many compatible components and accessories available \cite{rpi-rs-components} \cite{rpi-the-pi-hut-store}, such as specially designated touchscreens \cite{rpi-official-touchscreen}.
             
@@ -48,7 +48,7 @@
         \subsection{Arduino}
             Looking for another platform for hardware development, one which may encompass a smaller form factor, we may be quickly brought to the popular \textbf{Arduino} brand.
             
-            Arduino as a platform stems from the work of Hernando Barragán, who designed the Wiring development platform in 2003 as a Master's thesis.  His goal was to create a low cost and open platform accessible even to non-engineers\todo{Footnote, "I include this because the history is often misinterpreted, ...} \cite{arduino-untold-history}. 
+            Arduino as a platform stems from the work of Hernando Barragán, who designed the Wiring development platform in 2003 as a Master's thesis.  His goal was to create a low cost and open platform accessible even to non-engineers\footnote{I include this bit of history especially because it is often misinterpreted.} \cite{arduino-untold-history}. 
             
             There is a broad variety of boards available in the Arduino family \cite{arduino-products}.  All of them come equipped with a microprocessor, usually from the AVR family, and a set of analog and digital pins.  Some include an USB interface for communication with a computer.
             
@@ -97,9 +97,9 @@
             
             The size is stated as 2.4 by 0.7~inch (about 6 by 1.8~cm).
             
-            Teensy~3.6 is officially available for 29.25~USD (about 715~CZK) without shipping \cite{teensy-36}, or, for instance, at local distributors in the Czech Republic for 1~198~CZK \cite{teensy-36-snailshop}.  The cost is comparable with a Raspberry Pi.  \todo{Unlike pi, ports are not exposed?}
+            Teensy~3.6 is officially available for 29.25~USD (about 715~CZK) without shipping \cite{teensy-36}, or, for instance, at local distributors in the Czech Republic for 1~198~CZK \cite{teensy-36-snailshop}.  The cost is comparable with a Raspberry Pi.  %\todo{Unlike pi, ports are not exposed?}
             
-            The fast CPU, on-board USB host port and MicroSD host port make the Teensy a strong contender.
+            The fast CPU, on-board USB host port, and MicroSD slot make the Teensy~3.6 a strong contender.
             
             
         \subsection{FPGA}
@@ -112,13 +112,13 @@
             However, programming FPGAs is a task significantly more difficult than software programming, requiring the management of input and output signals and careful timing.  I have deemed the task of implementing the USB protocol at such a low-level too complex and out of scope.
             
     \section{Display Options}
-        \todo{those one/two-line things, lcd (very briefly connectors), oled, anything fancier?}
+        %\todo{those one/two-line things, lcd (very briefly connectors), oled, anything fancier?}
         The options for displays are truly diverse.  We may choose between small and simple displays to large LCDs.  A few representatives are provided.
         
         \subsection{Character-based LCDs}
             Simple single, two-, or four-line character based LCDs, typically blue in color, are a frequent sight in industrial devices.  Indeed such a LCD would be able to handle the Fedorator in terms of functionality - there is sufficient space to display the status or progress.  However, it's not a visually attractive alternative, being incapable of even displaying a logo.
             
-            \todo{If I want a picture I can get it here https://www.adafruit.com/product/181}
+            %\todo{If I want a picture I can get it here https://www.adafruit.com/product/181}
             
         \subsection{OLED}
             \imagefigure{adafruit-oled.jpg}
@@ -134,7 +134,7 @@
         Basic components such as push-buttons and LEDs are widely available from local distributors.
         
         Every device needs to be powered in some way.  Because the Fedorator will be stationary, we shall let it be powered by cable, preferably a commonly available one like Micro USB.  There is no need to consider a battery.
-        \todo{Something is amiss here...}
+        %\todo{Something is amiss here...}
     \section{Casing Options}
         Because the device will be made of several components, it's desirable to contain them in a case.  There are not many reasonable options present, but I have shortly considered alternatives.
         \subsection{Wood}
@@ -153,7 +153,7 @@
             For a technically hobby project like this, a 3D printed case is the logical choice.
             
             \subsubsection{3D printing materials}
-                A 3D printer needs to be provided with material to use.  The two most commonly used materials are \textbf{PLA} and \textbf{ABS} \cite{all3dp-best-fileament-types}.  Both are available in a variety of colors and look largely teh same, but they do have a few distinctive properties \cite{all3dp-pla-abs}. 
+                A 3D printer needs to be provided with material to use.  The two most commonly used materials are \textbf{PLA} and \textbf{ABS} \cite{all3dp-best-fileament-types}.  Both are available in a variety of colors and look largely the same, but they do have a few distinctive properties \cite{all3dp-pla-abs}. 
                 
                 \textbf{PLA} has a harder surface and is more prone to break when bent.  It is well suited for objects such as household items and gadgets.  PLA is made from plant material and is biodegradable.
                 
@@ -168,14 +168,15 @@
         
         A large device, complete with a larger display, will be served brilliantly by the Raspberry Pi computer.  The goal of being easily extensible would also be fulfilled.
         
-        We may, however, choose to go for a smaller design, which would bar the Raspberry Pi from being an option.  Over here, I see potential in the Arduino Nano device.  If it turned out to be sufficiently powerful to drive a MicroSD card reader and a connected USD flash disk, the size would be quite convenient and the price very attractive - when we're speaking of clones.  Should it turn out not to be the case, we may start considering stronger devices, such as the Teensy.  I believe an OLED display would work nicely for a compact solution.
+        We may, however, choose to go for a smaller design with the OLED display.  That would bar the Raspberry Pi from being an option.  Over here, I see potential in the Arduino Nano device.  If it turned out to be sufficiently powerful to drive a MicroSD card reader and a connected USD flash disk, the size would be quite convenient and the price very attractive - when we're speaking of clones.  Should that turn out not to be the case, we may start considering stronger devices, such as the Teensy.
         
         Whatever the design, a 3D printed case is a reasonable decision with regard to the typical fabricator of the device.
         
     \section{Concepts}
         Based on this analysis, I have created three distinct Fedorator concepts.
-        \todo{At the end, check if there should be a pagebreak here or not for stylistic reasons.}
-        \pagebreak
+        %\todo{At the end, check if there should be a pagebreak here or not for stylistic reasons.}
+        \newpage
+        
         \subsection{Concept A}
             \svgfigure{concept-a}{Concept A}
             The first concept is a moderately large device which is to be fixed in place and used from a standing posture.  It provides an LCD with on-screen information on the status and progress.  The rotary knob allows for controling the menu and making a selection.  It may be replaced with three buttons if so desired.  There are four USB slots present, each with a corresponding status light.  In order to be stable, the device needs support from the back.

@@ -3,15 +3,15 @@
     
     \section{Introduction to USB}
     
-    USB, standing for Universal Serial Bus, is an industry standard defining the hardware and protocols surrounding connection and communication of electric devices to computers\todo{CITE}.  
+    USB, standing for Universal Serial Bus, is an industry standard defining the hardware and protocols surrounding connection and communication of electric devices to computers\cite{lifewire-usb}.  
     
-    The USB 1.0 specification was introduced in 1996 and defined data tranfer rates of 1.5~Mbit/s and 12~Mbit/s \cite{hui1394}. \todo{did fast speed only get introduced with 1.1?}  In 2000, the USB 2.0 specification was released, which a significantly higher maximum data transfer rate of 480~Mbit/s\todo{CITE}.
+    The USB 1.0 specification was introduced in 1996 and defined data tranfer rates of 1.5~Mbit/s and 12~Mbit/s \cite{hui1394}.  In 2000, the USB 2.0 specification was released, which a significantly higher maximum data transfer rate of 480~Mbit/s\cite{usb-specification}.  % \todo{did fast speed only get introduced with 1.1?}
     
-    The USB 3.0 specification, released in 2008, defines a new SuperSpeed transfer mode.  This mode is claimed to support a transfer speed of up to 5~Gbit/s in full-duplex, with 350~MB/s thoughput in current implementations \cite{usb-3-hp}.  SuperSpeed plugs are distinctively identified by blue inserts. \todo{USB 3.1...?}
+    The USB 3.0 specification, released in 2008, defines a new SuperSpeed transfer mode.  This mode is claimed to support a transfer speed of up to 5~Gbit/s in full-duplex, with 350~MB/s thoughput in current implementations \cite{usb-3-hp}.  SuperSpeed plugs are distinctively identified by blue inserts.% \todo{USB 3.1...?}
     
     USB flash drives are data storage devices implementing the USB interface.  Many USB flash drives already implement USB~3.0 \cite{wirecutter-best-usb-3-0}, however, all have backwards compatibility as long as they use a traditional USB‑A port.  For our purposes, it's reasonable to assume people will use any old flash drive they have lying around, rather than specifically brand new ones.
     
-    In order to create a device behaving as an USB host, I have studied the USB~2.0 specification \todo{name/cite}.  Even if I won't be working with USB at a particularly low level, an overview is essential in order to understand behavior and judge parameters such as speed.
+    In order to create a device behaving as an USB host, I have studied the Universal Serial Bus Specification revision 2.0 \cite{usb-specification}.  Even if I won't be working with USB at a particularly low level, an overview is essential in order to understand behavior and judge parameters such as speed.
     
     The device I will be designing will only need to support the connection of USB flash drives to a single USB port, so only relevant information is taken in consideration.
     
@@ -57,7 +57,9 @@
                 \item \textbf{Bulk Transfer}: Large and bursty, but non-time sensitive data transmission, utilizing any bandwidth available.
             \end{itemize}
             
-            \todo{mass utilize bulk, more on page 52 (of the usb spec, not this thesis) (lol)}
+            Understandably, bulk transfer is the type used for mass storage.
+            
+            %\todo{mass utilize bulk, more on page 52 (of the usb spec, not this thesis) (lol)}
 
     \section{USB mass storage device class}
         The USB mass storage device class, or MSC for short, is a set of protocols allowing an USB device to enable the host to directly access a data storage.  A device implementing this protocol usually appears as an external hard drive.  All sorts of devices implement MSC, including hard drives, optical drives, solid state drives, card readers, or instruments such as cameras and mobile phones \cite{usb-keil-msc}.
@@ -66,8 +68,8 @@
         
         As of USB 3.0, there are provisions for a USB Attached SCSI protocol (UASB) protocol.  Particularly high performance mass storage devices may use that standard \cite{usb-electronicdesign-usb-uasp-bot}, but few devices have adopted it so far \cite{usb-winaero-usb-scsi-uas}.  In particular, as late as 2012, almost all USB flash drives on the market implemented only the BBB protocol \cite{usb-qemu-usb-storage}.
         
-        \todo{XXX that's not quite true, SCSI is in use **VIA** the BOT transport, and UASB is just anew transport in the next usb revision!!  Fixme!}
-        \todo{If I have time I should describe BBB/BOT...}
+        %\todo{XXX that's not quite true, SCSI is in use **VIA** the BOT transport, and UASB is just anew transport in the next usb revision!!  Fixme!}
+        %\todo{If I have time I should describe BBB/BOT...}
 
 \begin{comment}
     I will only support 2.0 since that's what most mass storage devices have
