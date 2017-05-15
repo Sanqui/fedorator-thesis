@@ -11,7 +11,7 @@
     
     I'm now convinced that the ideal core for the Fedorator Tiny would be \textbf{Teensy 3.6}.  With a SD card slot on board as well as a built in USB host capability, it requires no external active components to fulfill all requirements.
     
-    There is a library for working with the USB host port in development by the Teensy creator, \texttt{USBHost\_t36} \cite{usbhost_t36}.  In the present, it only supports keyboard and MIDI devices.  The best course of action here would be to add mass storage functoinality to this library.  I have begun the work on this by studying the USB and SCSI protocols.  Code-wise, I performed a small trial in the form of detecting the connection of an USB flash drive as seen on figure \todo{}, but full support would be the subject of another work of a significant scale.
+    There is a library for working with the USB host port in development by the Teensy creator, \texttt{USBHost\_t36} \cite{usbhost_t36}.  In the present, it only supports keyboard and MIDI devices.  The best course of action here would be to add mass storage functoinality to this library.  I have begun the work on this by studying the USB and SCSI protocols.  Code-wise, I performed a small trial in the form of detecting the connection of an USB flash drive as seen on figure \ref{photos/fedorator-tiny-teensy}, but full support would be the subject of another work of a significant scale.
     
     All work was done in C using the PlatformIO Core framework, which provides a unified build system for a large number of development platforms \cite{platformio-core}.
     
@@ -20,8 +20,8 @@
     %\todo{"Microcontroller based solution"}
     %\todo{platformio}
     
-    \imagefigure{photos/fedorator-tiny-oled.jpg}
-        {The Fedora logo on an OLED screen driven by Arduino Nano}
+    \imagefigurelarge{photos/fedorator-tiny-teensy.jpg}
+        {Teensy detecting a USB mass storage device}
     
     
 \begin{comment}
