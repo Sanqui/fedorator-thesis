@@ -41,7 +41,7 @@
         \subsection{USB Protocol}
             On the low level, USB functions as a polled bus.  Transactions, as initiated by the Host Controller, usually involve the transmission of up to three packets.  The token packet allows devices to identify whether they're the intended recipient of the packet.
             
-            To faciliate communication, the host and device negotiate device endpoints.  A device may be composed of several independent endpoints.  Endpoints are simplex - data flow is defined in a single direction.
+            To faciliate communication, the host and device negotiate device endpoints.  A device may be composed of several independent endpoints.  Endpoints are simplex—data flow is defined in a single direction.
             
             A USB pipe is an association between an endpoint on a device and software on the host.  In other words, pipes are what the software handles and uses for data transmission.  Pipes can be configured to behave in \emph{message} or \emph{stream} modes, which either do or do not have a USB-defined structure, respectively.
             
