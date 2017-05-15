@@ -15,20 +15,20 @@
     
     The device I will be designing will only need to support the connection of USB flash drives to a single USB port, so only relevant information is taken in consideration.
     
-    \section{USB specification}
+    \section{USB Specification}
         USB is a cable bus providing data exchange between a host device (usually a computer) and several connected peripherals which may be attached and used independently.  USB defines a host-scheduled and token-based protocol for communication with peripherals.
         
         A USB system is prescribed as a tiered star topology involving hosts, hubs, and functions (logical devices).  USB allows for complex asymmetrical topology, but in our situation, only a root hub will be present.
         
-        \subsection{USB host}
+        \subsection{USB Host}
             A single host is present in any USB system.  The Host Controller, implemented in hardware or software, has many responsibilities.  It initiates connections and manages all communication and bandwidth between software and connected devices.
             
             The USB host also supplies power to connected devices.
         
-        \subsection{USB device}
+        \subsection{USB Device}
             A USB device is a peripherial connected to the host utilizing the USB protocol.  There is a number of class codes defined in the USB standard \cite{usb-class-codes}.  Common classes include the HID (Human interface device) class encompassing keyboards and mice, the printer class, the video class, and indeed, the mass storage class. 
         
-        \subsection{USB hardware}
+        \subsection{USB Hardware}
             USB uses a four-wire cable, encompassing a twisted pair of data wires and as a V\textsubscript{BUS} and GND pair delivering a nominal +5~V power to devices.
             
             The clock is transmitted along with data using a clock encoding scheme.  There are three data rates available:
@@ -38,7 +38,7 @@
                 \item High-speed, defined at 480 Mb/s.
             \end{itemize}
         
-        \subsection{USB protocol}
+        \subsection{USB Protocol}
             On the low level, USB functions as a polled bus.  Transactions, as initiated by the Host Controller, usually involve the transmission of up to three packets.  The token packet allows devices to identify whether they're the intended recipient of the packet.
             
             To faciliate communication, the host and device negotiate device endpoints.  A device may be composed of several independent endpoints.  Endpoints are simplex - data flow is defined in a single direction.
@@ -61,7 +61,7 @@
             
             %\todo{mass utilize bulk, more on page 52 (of the usb spec, not this thesis) (lol)}
 
-    \section{USB mass storage device class}
+    \section{USB Mass Storage Device Class}
         The USB mass storage device class, or MSC for short, is a set of protocols allowing an USB device to enable the host to directly access a data storage.  A device implementing this protocol usually appears as an external hard drive.  All sorts of devices implement MSC, including hard drives, optical drives, solid state drives, card readers, or instruments such as cameras and mobile phones \cite{usb-keil-msc}.
         
         A number of subclasses and transport protocols is defined for the MSC.  MSC allows for certain protocols defined outside of USB to be used, such as SCSI or totally obscure ones like QIC-157 or SFF-8070i.  The USB defined transports are Bulk-Only transport (BBB or BOT) and the obsolete Control/Bulk/Interrupt (CBI) transport, only in use for USB floppy disk drives \cite{usb-mass-storage} \cite{usb-mass-bulk}.

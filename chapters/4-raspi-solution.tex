@@ -50,7 +50,7 @@
             If at any point the flash drive is removed, the software goes back to the standby screen.
             
             %\todo{more words?}
-        \section{Technical implementation}
+        \section{Technical Implementation}
             The Fedorator software leverages features provided by the Linux operating system for its feature set.  Following the widely discussed UNIX "Everything is a File" philosophy \cite{ph7spot-unix-file}, certain convenient directories provide information about the connected devices after the kernel takes care of them.
             
             In particular, \texttt{/dev/disk/by-path} is used to watch for newly connected USB storage devices, and \texttt{/proc/partitions} is queried for information on the size of the medium.
