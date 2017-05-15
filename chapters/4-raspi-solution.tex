@@ -42,12 +42,12 @@
             
             A progress bar shows how far along the write is.
             
-            After the write is complete, the screen shows ``Done!", pulsating in green to grab attention.  It also tells the user they may now safely remove the flash drive.  A single tap at this point will bring the Fedorator back to the standby screen.
+            After the write is complete, the screen shows ``Finished!", pulsating in green to grab attention.  It also tells the user they may now safely remove the flash drive.  A single tap at this point will bring the Fedorator back to the standby screen.
             
             \screenshotfigure{fedorator-screenshot-done.png}
-                {Fedorator: Fedora LXDE Destkop was sucessfully written to the flash drive} % \todo{Replace the screenshot with one that says "drive" if there's time.}}
+                {Fedorator: Fedora LXDE Destkop was sucessfully written to the flash drive}
             
-            If at any point the flash drive is removed, the software goes back to the standby screen.
+            The device returns to standby mode after a tap or after 30 seconds.  If at any point before the write finishes the flash drive is removed, the software goes back to the standby screen immediately.
             
             %\todo{more words?}
         \section{Technical Implementation}
@@ -142,8 +142,8 @@
         
         Overall, creating the device was a success, although there is still work to be done.  I'm not satisfied with the components used for the prototype, in particular, the proprietary screen.  I would like to be able to recommend a standard screen, so I will be searching for alternatives.
         
-        Another sore point is the lack of fixation for the components.  During regular usage, the screen may wiggle a small amount or be at a slightly off angle.  The next iteration on this design will include screws, fasteing bolts, or a similar ``tried and tested" solution.
+        Another issue is the lack of fixation for the components.  During regular usage, the screen may wiggle a small amount or be at a slightly off angle.  The next iteration on this design will include screws, fasteing bolts, or a similar ``tried and tested" solution.
         
-        The software works well and can be improved easily.  Continued development may bring features such as the addition of secondary data partitions to the resulting flash drives.
+        Testing has shown the current version of the software works according to the specifications.  It is built with provisions for future improvements.  Continued development may bring features such as the addition of secondary data partitions to the resulting flash drives.
         
         %\todo{I still haven't done the speed measuring thing...}
