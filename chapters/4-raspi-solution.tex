@@ -1,11 +1,11 @@
 \chapter{Raspberry Pi-based Solution}
-    I have decided to create a Fedorator utilizing the Raspberry Pi computer at its core.  This design is based on the previously introduced Concept B (\ref{pic:concept-b}).
+    I have decided to create a Fedorator utilizing the Raspberry Pi computer at its core.  This design is based on the previously introduced Concept B (fig. \ref{pic:concept-b}).
     \section{Specification}
 %        \todo{What, exactly, will the device consist of?}
         The device consists of:
         \begin{itemize}
             \item Raspberry Pi~3 Model~B.  Compatibility with Raspberry Pi~2 Model~B may be possible, but not a primary goal.
-            \item A compatible 3.5~inch touchscreen (minimum resolution 480*320 pixels) positioned vertically.
+            \item A compatible 3.5~inch touchscreen (minimum resolution $480\times*320$ pixels) positioned vertically.
             \item A microSD card holding the system and several images.
             \item Two male-to-female USB cables.
             \item A 3D printed case.
@@ -19,19 +19,19 @@
         The software running on the Fedorator is written in Python and uses the free open source Kivy framework \cite{kivy} to provide a touchscreen interface.  It is is designed to start immediately after boot and stay running indefinitely.
         
         \subsection{Behavior}
-            In standby, the screen shows prominently the Fedora logo as well as the name of the device (\ref{pic:fedorator-screenshot-standby.png}).  It prompts the user to insert a flash drive.
+            In standby, the screen shows prominently the Fedora logo as well as the name of the device (fig. \ref{pic:fedorator-screenshot-standby.png}).  It prompts the user to insert a flash drive.
             
             \screenshotfigure{fedorator-screenshot-standby.png}
                 {Fedorator: the standby screen}
             
             When the user inserts a flash drive, the text changes, stating ``Tap to begin".  The size of the flash drive is also displayed at the bottom part of the screen.
             
-            Tapping will transition the screen into a menu listing releases available for writing (\ref{pic:fedorator-screenshot-list.png}).  This list can be browsed by a swiping a finger or stylus across the screen.  Tapping the top left corner will always bring the user back to the previous screen, as indicated by the faint ``back" text. 
+            Tapping will transition the screen into a menu listing releases available for writing (fig. \ref{pic:fedorator-screenshot-list.png}).  This list can be browsed by a swiping a finger or stylus across the screen.  Tapping the top left corner will always bring the user back to the previous screen, as indicated by the faint ``back" text. 
             
             \screenshotfigure{fedorator-screenshot-list.png}
                 {Fedorator: picking a release from the list}
             
-            After tapping a desired release, a screen with details is presented (\ref{pic:fedorator-screenshot-details.png}).  It contains a short official description of the release and offers to set the version and architecture, should the user wish for something other than the defaults.
+            After tapping a desired release, a screen with details is presented (fig. \ref{pic:fedorator-screenshot-details.png}).  It contains a short official description of the release and offers to set the version and architecture, should the user wish for something other than the defaults.
             
             \screenshotfigure{fedorator-screenshot-details.png}
                 {Fedorator: taking a look at the Fedora Workstation release}
@@ -51,7 +51,7 @@
             
             %\todo{more words?}
         \section{Technical Implementation}
-            The Fedorator software leverages features provided by the Linux operating system for its feature set.  Following the widely discussed UNIX "Everything is a File" philosophy \cite{ph7spot-unix-file}, certain convenient directories provide information about the connected devices after the kernel takes care of them.
+            The Fedorator software leverages features provided by the Linux operating system for its feature set.  Following the widely discussed UNIX ``Everything is a File" philosophy \cite{ph7spot-unix-file}, certain convenient directories provide information about the connected devices after the kernel takes care of them.
             
             In particular, \texttt{/dev/disk/by-path} is used to watch for newly connected USB storage devices, and \texttt{/proc/partitions} is queried for information on the size of the medium.
             
@@ -87,7 +87,7 @@
 %        \todo{A prototype will be built.  This should probably include pictures and a short description of the process}
         I have put a functional prototype of the Fedorator together.
         
-        The prototype consists of all the required components.  The screen is a 3.5 inch HDMI touchscreen display with support for up to 1920*1080 pixels in resolution \cite{aliexpress-touchscreen}.  However, in the prototype, the resolution is kept as 480*320 to ensure broadest support.  Sadly, drivers for this display are proprietary and only provided for Raspbian \cite{osoyoo-drivers}.  Hence, the prototype runs the Raspbian operating system.
+        The prototype consists of all the required components.  The screen is a 3.5 inch HDMI touchscreen display with support for up to $1920\times1080$ pixels in resolution \cite{aliexpress-touchscreen}.  However, in the prototype, the resolution is kept as $480\times320$ to ensure broadest support.  Sadly, drivers for this display are proprietary and only provided for Raspbian \cite{osoyoo-drivers}.  Hence, the prototype runs the Raspbian operating system.
         
         The case for the prototype was printed on a LulzBot Mini \cite{lulzbot-mini} 3D printer.  The PLA material was used for filament.
         
