@@ -1,4 +1,4 @@
-\chapter{Second Solution}
+\chapter{Microcontroller-based solution}
     %\todo{If applicable}
     %\todo{After experimentation, I have determined that the Arduino Nano is not viable,...}
     %\todo{photo of the pretty fedorator oled logo at least}
@@ -13,10 +13,12 @@
     
     There is a library for working with the USB host port in development by the Teensy creator, \texttt{USBHost\_t36} \cite{usbhost_t36}.  In the present, it only supports keyboard and MIDI devices.  The best course of action here would be to add mass storage functoinality to this library.  I have begun the work on this by studying the USB and SCSI protocols.  Code-wise, I performed a small trial in the form of detecting the connection of an USB flash drive as seen on figure \todo{}, but full support would be the subject of another work of a significant scale.
     
+    All work was done in C using the PlatformIO Core framework, which provides a unified build system for a large number of development platforms\cite{platformio-core}.
+    
     \todo{test in appendix}
     \todo{check citations in this chapter}
-    \todo{"Microcontroller based solution"}
-    \todo{platformio}
+    %\todo{"Microcontroller based solution"}
+    %\todo{platformio}
     
     \imagefigure{photos/fedorator-tiny-oled.jpg}
         {The Fedora logo on an OLED screen driven by Arduino Nano}
