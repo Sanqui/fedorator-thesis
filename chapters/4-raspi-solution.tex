@@ -5,7 +5,7 @@
         The device consists of:
         \begin{itemize}
             \item Raspberry Pi~3 Model~B.  Compatibility with Raspberry Pi~2 Model~B may be possible, but not a primary goal.
-            \item A compatible 3.5~inch touchscreen (minimum resolution $480\times*320$ pixels) positioned vertically.
+            \item A compatible 3.5~inch touchscreen (minimum resolution $480\times320$ pixels) positioned vertically.
             \item A microSD card holding the system and several images.
             \item Two male-to-female USB cables.
             \item A 3D printed case.
@@ -36,7 +36,7 @@
             \screenshotfigure{fedorator-screenshot-details.png}
                 {Fedorator: taking a look at the Fedora Workstation release}
             
-            If the user is happy with the choice, they can press the sizeable ``Flash" button.  Before the flashing operation begins, a popup appears warning the user that all data on the flash disk will be destroyed.  The user must acknowledge this with the ``Continue" button, and that begins the process of writing the image to the flash drive.
+            If the user is happy with the choice, they can press the sizeable ``Flash" button.  Before the flashing operation begins, a popup appears warning the user that all data on the flash drive will be destroyed.  The user must acknowledge this with the ``Continue" button, and that begins the process of writing the image to the flash drive.
             
             %\todo{(fedorator) Do I want to change the button from "Flash" to "Write" or such?  Also, Maybe add a warning about this being a destructive action}
             
@@ -57,7 +57,7 @@
             
             The primary function is the flashing operation.  After a write is initiated, the \texttt{umount} command is called on the target partition, because writing to a device which is mounted may result in corruption.
             
-             Next, the software performs a direct copy to the USB disk.  This is akin to the \texttt{dd} utility.  In order to achieve the best performance, the \texttt{sendfile()} \cite{man-sendfile} function is used.  Because \texttt{sendfile()} performs copying directly in the kernel, it is faster than an equivalent task involving reads and subsequent writes.
+             Next, the software performs a direct copy to the USB drive.  This is akin to the \texttt{dd} utility.  In order to achieve the best performance, the \texttt{sendfile()} \cite{man-sendfile} function is used.  Because \texttt{sendfile()} performs copying directly in the kernel, it is faster than an equivalent task involving reads and subsequent writes.
             
             After the copy finishes from the perspective of the system, it is actually not yet safe to remove the flash drive.  Flash drives keep an internal buffer and may need more time in order to finish writing the data.  By utilizing the \texttt{udisksctl power-off} command, we issue the system to shut down and unplug the USB device as soon as it stops being busy.
             
