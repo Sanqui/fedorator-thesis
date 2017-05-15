@@ -30,17 +30,17 @@
                 \item Ethernet port,
                 \item Combined 3.5mm audio jack and composite video,
                 \item Camera interface (CSI) and Display interface (DSI),
-                \item Micro SD card slot,
+                \item MicroSD card slot,
                 \item VideoCore IV 3D graphics core.
             \end{itemize}
             
-            We can see that some of the necessary components are already included: four USB ports and a MicroSD slot.  This means there is less assembly involved.  For example, we may avoid the need to solder entirely.
+            We can see that some of the necessary components are already included: four USB ports and a microSD slot.  This means there is less assembly involved.  For example, we may avoid the need to solder entirely.
             
             The dimensions of a Raspberry Pi~3 Model B are 85.6 by 56.5~mm (without connectors).  This may prevent it from being used in a more compact design.
             
             Raspberry Pis are widely available and there are local distributors, or resellers in most places around the world \cite{rpi-buying-guide} \cite{rpi-buying-links-by-country}.  In the Czech Republic, a Raspberry Pi 3 Model 3 may be bought for between 1~046 and 1~359~CZK \cite{rpi-rpi3-rpishop} \cite{rpi-rpi3-minidroid} \cite{rpi-rpi3-alza}.
             
-            The Raspberry Pi is open hardware with the exception of the Broadcom SoC\footnote{System on a Chip} containing the video core.  For an operating system, many Linux distributions provide support \cite{rpi-opensource}.  Being a computer running a full operating system, support for acting as a USB host device comes naturally.
+            The Raspberry Pi is open hardware with the exception of the Broadcom SoC containing the video core.  For an operating system, many Linux distributions provide support \cite{rpi-opensource}.  Being a computer running a full operating system, support for acting as a USB host device comes naturally.
             
             Finally, due to the sheer popularity of Raspberry Pi, there are many compatible components and accessories available \cite{rpi-rs-components} \cite{rpi-the-pi-hut-store}, such as specially designated touchscreens \cite{rpi-official-touchscreen}.
             
@@ -74,7 +74,7 @@
             \subsubsection{Arduino Nano}
                 \imagefigure{arduino-nano.jpg}
                     {Arduino Nano  \cite{arduino-nano-robotics}}
-                The Arduino Nano is a smaller board (18 by 45~mm) which nonetheless packs almost the same capabilities as the Uno model \cite{arduino-nano}.  It is officially powered by Mini USB, but many clones provide Micro USB instead.
+                The Arduino Nano is a smaller board (18 by 45~mm) which nonetheless packs almost the same capabilities as the Uno model \cite{arduino-nano}.  It is officially powered by Mini USB, but many clones provide micro USB instead.
                     
             
         \subsection{ESP8266}
@@ -91,7 +91,7 @@
                 \item 1M Flash, 256K RAM, 4K EEPROM,
                 \item USB Full Speed (12 Mbit/sec) port,
                 \item USB High Speed (480 Mbit/sec) port,
-                \item Native micro SD card port,
+                \item Native microSD card port,
                 \item CAN bus ports, serial, SPI, I2C, I2S, Ethernet and more.
             \end{itemize}
             
@@ -133,7 +133,7 @@
         
         Basic components such as push-buttons and LEDs are widely available from local distributors.
         
-        Every device needs to be powered in some way.  Because the Fedorator will be stationary, we shall let it be powered by cable, preferably a commonly available one like Micro USB.  There is no need to consider a battery.
+        Every device needs to be powered in some way.  Because the Fedorator will be stationary, we shall let it be powered by cable, preferably a commonly available one like micro USB.  There is no need to consider a battery.
         %\todo{Something is amiss here...}
     \section{Casing Options}
         Because the device will be made of several components, it's desirable to contain them in a case.  There are not many reasonable options present, but I have shortly considered alternatives.
@@ -168,7 +168,7 @@
         
         A large device, complete with a larger display, will be served brilliantly by the Raspberry Pi computer.  The goal of being easily extensible would also be fulfilled.
         
-        We may, however, choose to go for a smaller design with the OLED display.  That would bar the Raspberry Pi from being an option.  Over here, I see potential in the Arduino Nano device.  If it turned out to be sufficiently powerful to drive a MicroSD card reader and a connected USD flash disk, the size would be quite convenient and the price very attractive - when we're speaking of clones.  Should that turn out not to be the case, we may start considering stronger devices, such as the Teensy.
+        We may, however, choose to go for a smaller design with the OLED display.  That would bar the Raspberry Pi from being an option.  Over here, I see potential in the Arduino Nano device.  If it turned out to be sufficiently powerful to drive a microSD card reader and a connected USB flash disk, the size would be quite convenient and the price very attractive - when we're speaking of clones.  Should that turn out not to be the case, we may start considering stronger devices, such as the Teensy.
         
         Whatever the design, a 3D printed case is a reasonable decision with regard to the typical fabricator of the device.
         

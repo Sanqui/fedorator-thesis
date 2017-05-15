@@ -6,7 +6,7 @@
         \begin{itemize}
             \item Raspberry Pi~3 Model~B.  Compatibility with Raspberry Pi~2 Model~B may be possible, but not a primary goal.
             \item A compatible 3.5~inch touchscreen (minimum resolution 480*320 pixels) positioned vertically.
-            \item A MicroSD card holding the system and several images.
+            \item A microSD card holding the system and several images.
             \item Two male-to-female USB cables.
             \item A 3D printed case.
         \end{itemize}
@@ -66,7 +66,7 @@
             {A screenshot of the OpenSCAD software with the case open.  Both the source code and the rendered model can be seen}
         I created the model for the case using the \textbf{OpenSCAD} software.  In OpenSCAD, objects are designed using a descriptive language.  One consequence is that when a value such as the length of a certain sub-component is used in several places, it may easily be defined once and used by its name repeatedly.  This allows for easy changes to just about any relevant dimension and also enhances understanding of the source code.  In proper terms, the model I designed is \textit{parametric}.
         
-        OpenSCAD allows exporting the model to the STL (STereoLithography) format.  This format can then be processed by a slicing program like Slic3r or Cura to prepare for printing.
+        OpenSCAD allows exporting the model to the STL format.  This format can then be processed by a slicing program like Slic3r or Cura to prepare for printing.
         
         \imagefigurelarge{case-render.png}
             {A render of the constructed case, courtesy of OpenSCAD}
@@ -96,7 +96,7 @@
         
         In order to test the model's dimensions and fitness, a series of test prints was done first.  After certain parameters were verified, such as whether the Raspberry Pi is seated correctly, the full case was set to be printed.  The poor behavior of the test prints with regard to bridges has led to the decision to print the full case with supports\footnote{Supports are brittle, easy to remove material printed under overhangs in the object.}.
         
-        Due to the printer's size, the height of this prototype had to be lowered to 172~cm and each part was printed individually.  Each part took about ten hours to print. \todo{exact numbers?}
+        Due to the printer's size, the height of this prototype had to be lowered to 172~cm and each part was printed individually.  Each part took about ten hours to print.% \todo{exact numbers?}
         
         \imagefigure{photos/fedorator-case-supports.jpg}
             {The case print complete with supports}

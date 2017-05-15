@@ -6,7 +6,7 @@
 % hidelinks remove colour boxes around hyperlinks
 
 % arara: xelatex: { shell: yes }
-%% arara: makeglossaries
+% arara: makeglossaries
 % arara: biber
 % arara: xelatex: { shell: yes }
 % arara: xelatex: { shell: yes }
@@ -66,6 +66,9 @@
     \end{figure}
 }
 
+\makeglossaries
+\input{glossary.tex}
+\glsaddall	% add even unused acronyms
 
 \acknowledgements{\input{acknowledgements.tex}}
 \abstractEN{\input{abstract_en.tex}}
@@ -88,8 +91,15 @@
 \begin{conclusion}
     \input{"chapters/9-conclusion.tex"}
 \end{conclusion}
-    
+
 \printbibliography[]
 
+
+\appendix
+
+\chapter{List of Acronyms}
+\printglossary[type=\acronymtype,style=acronyms]
+
+\input{medium.tex}
 
 \end{document}
