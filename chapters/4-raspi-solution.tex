@@ -127,6 +127,26 @@
             \item \textbf{Assembly}: Contains a description of the case, instructions on printing it and how to put it all together.
         \end{itemize}
         
+    \section{Speed Measurements}
+        To test performance in different situations, I have measured how long the Fedorator takes to write the Fedora Workstation Live image (1.34~GiB) to several different flash drives.  Several measurements were done in order to gain the average.  There was negligible deviation.
+        
+        \begin{table}[htbp]
+        \centering
+        \caption{Fedorator speed measurements}
+        \label{usb-duplicators}
+            \begin{tabular}{ m{15em}  r r }
+            \toprule
+                \textbf{Flash drive} & \textbf{Capacity} & \textbf{Average time} \\
+            \toprule
+            
+       SONY USB2.0              & 15.80~GiB & 6~m~07~s \\
+\hline SONY MICRO VAULT TINY    &  1.89~GiB & 6~m~27~s \\
+\hline SP Silicon Power 16GB    & 15.00~GiB & 4~m~26~s \\
+\hline LaCie                    & 15.10~GiB & 2~m~08~s 
+            \end{tabular}
+        \end{table}
+        
+        We can see that the time varies a lot depending on the speed of the flash drive.
         
         \begin{comment}
         \todo{These are the final instructions that will be the "result" of the work.  Should they be inlined here?}
