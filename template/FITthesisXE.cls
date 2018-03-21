@@ -10,7 +10,7 @@
 % Sice XeLaTeX uses OpenType fonts provided by your operation system, make sure
 % that you have these open-source fonts installed:
 %   * Linux Libertine Fonts (http://www.linuxlibertine.org/)
-%   * DejaVu Fonts (http://dejavu-fonts.org/)
+%   * DejaVu Fonts (https://dejavu-fonts.github.io/)
 % Or choose another fonts you like and change \setmainfont and \setmonofont.
 % 
 % 
